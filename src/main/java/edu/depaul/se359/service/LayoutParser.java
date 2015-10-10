@@ -1,7 +1,7 @@
-package main.service;
+package main.java.edu.depaul.se359.service;
 
 import com.google.gson.Gson;
-import main.model.HomeLayoutList;
+import main.java.edu.depaul.se359.model.HomeLayoutList;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;

@@ -1,4 +1,4 @@
-package main.model;
+package main.java.edu.depaul.se359.model;
 
 /**
  * Created on 10/10/15.
