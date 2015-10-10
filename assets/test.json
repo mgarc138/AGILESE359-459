@@ -1,0 +1,24 @@
+{
+  "HomeLayout": [
+    {
+      "id": "roomA",
+      "cells": [
+        {
+          "xPosition": "0",
+          "yPosition": "0",
+          "surface": {
+            "id": 1,
+            "name": "Bare Floor",
+            "comment": "Add Other attributes according to the surface if necessary"
+          },
+          "right": "1",
+          "left": "2",
+          "up": "1",
+          "down": "2",
+          "charge": "1",
+          "dirt": "1"
+        }
+      ]
+    }
+  ]
+}
