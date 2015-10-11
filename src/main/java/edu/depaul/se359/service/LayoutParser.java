@@ -1,7 +1,7 @@
-package main.java.edu.depaul.se359.service;
+package edu.depaul.se359.service;
 
 import com.google.gson.Gson;
-import main.java.edu.depaul.se359.model.HomeLayoutList;
+import edu.depaul.se359.model.HomeLayoutList;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -14,7 +14,7 @@ import java.io.FileReader;
  * Assignment: SE459
  */
 public class LayoutParser {
-    public static HomeLayoutList parse(String filename) throws FileNotFoundException {
+    public static HomeLayoutList parseHomeLayout(String filename) throws FileNotFoundException {
         Gson gson = new Gson();
         BufferedReader br = new BufferedReader(new FileReader(filename));
 

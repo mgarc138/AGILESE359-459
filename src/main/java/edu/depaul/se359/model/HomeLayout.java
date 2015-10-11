@@ -1,4 +1,4 @@
-package main.java.edu.depaul.se359.model;
+package edu.depaul.se359.model;
 
 import java.util.List;
 

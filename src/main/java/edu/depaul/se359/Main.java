@@ -1,7 +1,8 @@
-package main.java.edu.depaul.se359;
+package edu.depaul.se359;
 
-import main.java.edu.depaul.se359.model.HomeLayoutList;
-import main.java.edu.depaul.se359.service.LayoutParser;
+
+import edu.depaul.se359.model.HomeLayoutList;
+import edu.depaul.se359.service.LayoutParser;
 
 import java.io.IOException;
 
@@ -13,7 +14,7 @@ import java.io.IOException;
  */
 public class Main {
     public static void main(String[] args) throws IOException {
-        HomeLayoutList layouts = LayoutParser.parse("./assets/test.json");
+        HomeLayoutList layouts = LayoutParser.parseHomeLayout("./assets/test.json");
 
         System.out.println(layouts);
     }

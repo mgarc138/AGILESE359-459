@@ -1,4 +1,4 @@
-package main.java.edu.depaul.se359.model;
+package edu.depaul.se359.model;
 
 import java.util.List;
 
@@ -11,11 +11,11 @@ import java.util.List;
 public class HomeLayoutList {
     private List<HomeLayout> HomeLayout;
 
-    public List<main.java.edu.depaul.se359.model.HomeLayout> getHomeLayout() {
+    public List<HomeLayout> getHomeLayout() {
         return HomeLayout;
     }
 
-    public void setHomeLayout(List<main.java.edu.depaul.se359.model.HomeLayout> homeLayout) {
+    public void setHomeLayout(List<HomeLayout> homeLayout) {
         HomeLayout = homeLayout;
     }
 

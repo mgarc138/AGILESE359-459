@@ -1,4 +1,4 @@
-package main.java.edu.depaul.se359.model;
+package edu.depaul.se359.model;
 
 /**
  * Created on 10/10/15.
@@ -15,13 +15,13 @@ public class Cell {
     private int down;
     private int charge;
     private int dirt;
-    private Surface surface;
+    private int surface;
 
-    public Surface getSurface() {
+    public int getSurface() {
         return surface;
     }
 
-    public void setSurface(Surface surface) {
+    public void setSurface(int surface) {
         this.surface = surface;
     }
 
