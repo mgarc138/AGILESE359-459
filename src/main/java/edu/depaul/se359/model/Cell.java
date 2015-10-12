@@ -7,8 +7,8 @@ package edu.depaul.se359.model;
  * Assignment: SE459
  */
 public class Cell {
-    private int xPosition;
-    private int yPosition;
+    
+    private CoordinatePoint point;
     private int right;
     private int left;
     private int up;
@@ -19,8 +19,7 @@ public class Cell {
 
     public Cell(int xPosition, int yPosition, int rightPath, int leftPath, int upPath, int downPath, int charge, int dirt, int surface){
 
-        setxPosition(xPosition);
-        setyPosition(yPosition);
+        point = new  CoordinatePoint(xPosition, yPosition);      
         setRight(rightPath);
         setLeft(leftPath);
         setUp(upPath);
@@ -55,33 +54,9 @@ public class Cell {
                 '}';
     }
 
-    public int getxPosition() {
-        return xPosition;
-    }
+    
 
-    public void setxPosition(int xPosition) {
-
-        if(xPosition < 0){
-
-            // exection
-        }
-
-        this.xPosition = xPosition;
-    }
-
-    public int getyPosition() {
-        return yPosition;
-    }
-
-    public void setyPosition(int yPosition) {
-
-        if(yPosition < 0){
-
-            // exection
-        }
-
-        this.yPosition = yPosition;
-    }
+    
 
     public int getRight() {
         return right;
