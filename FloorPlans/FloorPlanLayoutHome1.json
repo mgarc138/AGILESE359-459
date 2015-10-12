@@ -1,663 +1,547 @@
-{ // left , right , down and up codes are : 0 = unknown , 1 = it is open, 2 = there is an obtacle, 3 = there is a stairs
-	"Homelayout": [
-		
-		{
-			"id": "roomA",
-			"cell": [
-				
-				{
-					"xPosition" : "0",
-					"yPosition" : "0",
-					"surface": "1", // the type of surefaces are 1.Bare Floor, 2. Low-pile carpter, 3.High-pile carpet
-					// paths
-					"right": "1",
-					"left": "2",
-					"up": "1",
-					"down": "2",
-					"charge": "1",
-					"dirt":"1"					
-				},
-				
-				{
-					"xPosition" : "1",
-					"yPosition" : "0",
-					"surface": "1", // the type of surefaces are 1.Bare Floor, 2. Low-pile carpter, 3.High-pile carpet
-					// paths
-					"right": "1",
-					"left": "1",
-					"up": "1",
-					"down": "2",
-					"charge": "0",
-					"dirt":"1"					
-				},
-				
-				{
-					"xPosition" : "2",
-					"yPosition" : "0",
-					"surface": "1", // the type of surefaces are 1.Bare Floor, 2. Low-pile carpter, 3.High-pile carpet
-					// paths
-					"right": "1",
-					"left": "1",
-					"up": "1",
-					"down": "2",
-					"charge": "0",
-					"dirt":"1"					
-				},
-				
-				{
-					"xPosition" : "3",
-					"yPosition" : "0",
-					"surface": "1", // the type of surefaces are 1.Bare Floor, 2. Low-pile carpter, 3.High-pile carpet
-					// paths
-					"right": "2",
-					"left": "1",
-					"up": "1",
-					"down": "2",
-					"charge": "0",
-					"dirt":"1"					
-				},
-				
-				{
-					"xPosition" : "0",
-					"yPosition" : "1",
-					"surface": "1", // the type of surefaces are 1.Bare Floor, 2. Low-pile carpter, 3.High-pile carpet
-					// paths
-					"right": "1",
-					"left": "2",
-					"up": "1",
-					"down": "1",
-					"charge": "0",
-					"dirt":"1"					
-				},
-				
-				{
-					"xPosition" : "1",
-					"yPosition" : "1",
-					"surface": "1", // the type of surefaces are 1.Bare Floor, 2. Low-pile carpter, 3.High-pile carpet
-					// paths
-					"right": "1",
-					"left": "1",
-					"up": "1",
-					"down": "1",
-					"charge": "0",
-					"dirt":"1"					
-				},
-				
-				{
-					"xPosition" : "2",
-					"yPosition" : "1",
-					"surface": "1", // the type of surefaces are 1.Bare Floor, 2. Low-pile carpter, 3.High-pile carpet
-					// paths
-					"right": "1",
-					"left": "1",
-					"up": "1",
-					"down": "1",
-					"charge": "0",
-					"dirt":"1"					
-				},
-				
-				{
-					"xPosition" : "3",
-					"yPosition" : "1",
-					"surface": "1", // the type of surefaces are 1.Bare Floor, 2. Low-pile carpter, 3.High-pile carpet
-					// paths
-					"right": "2",
-					"left": "1",
-					"up": "1",
-					"down": "1",
-					"charge": "0",
-					"dirt":"1"					
-				},
-				
-				{
-					"xPosition" : "0",
-					"yPosition" : "2",
-					"surface": "1", // the type of surefaces are 1.Bare Floor, 2. Low-pile carpter, 3.High-pile carpet
-					// paths
-					"right": "1",
-					"left": "2",
-					"up": "1",
-					"down": "1",
-					"charge": "0",
-					"dirt":"1"					
-				},
-				
-				{
-					"xPosition" : "1",
-					"yPosition" : "2",
-					"surface": "1", // the type of surefaces are 1.Bare Floor, 2. Low-pile carpter, 3.High-pile carpet
-					// paths
-					"right": "1",
-					"left": "1",
-					"up": "1",
-					"down": "1",
-					"charge": "0",
-					"dirt":"1"					
-				},
-				
-				{
-					"xPosition" : "2",
-					"yPosition" : "2",
-					"surface": "1", // the type of surefaces are 1.Bare Floor, 2. Low-pile carpter, 3.High-pile carpet
-					// paths
-					"right": "1",
-					"left": "1",
-					"up": "1",
-					"down": "1",
-					"charge": "0",
-					"dirt":"1"					
-				},
-				
-				{
-					"xPosition" : "3",
-					"yPosition" : "2",
-					"surface": "1", // the type of surefaces are 1.Bare Floor, 2. Low-pile carpter, 3.High-pile carpet
-					// paths
-					"right": "2",
-					"left": "1",
-					"up": "1",
-					"down": "1",
-					"charge": "0",
-					"dirt":"1"					
-				},
-				
-				{
-					"xPosition" : "0",
-					"yPosition" : "3",
-					"surface": "1", // the type of surefaces are 1.Bare Floor, 2. Low-pile carpter, 3.High-pile carpet
-					// paths
-					"right": "1",
-					"left": "2",
-					"up": "1",
-					"down": "1",
-					"charge": "0",
-					"dirt":"1"					
-				},
-				
-				{
-					"xPosition" : "1",
-					"yPosition" : "3",
-					"surface": "1", // the type of surefaces are 1.Bare Floor, 2. Low-pile carpter, 3.High-pile carpet
-					// paths
-					"right": "1",
-					"left": "1",
-					"up": "1",
-					"down": "1",
-					"charge": "0",
-					"dirt":"1"					
-				},
-				
-				{
-					"xPosition" : "2",
-					"yPosition" : "3",
-					"surface": "1", // the type of surefaces are 1.Bare Floor, 2. Low-pile carpter, 3.High-pile carpet
-					// paths
-					"right": "1",
-					"left": "1",
-					"up": "1",
-					"down": "1",
-					"charge": "0",
-					"dirt":"1"					
-				},
-				
-				{
-					"xPosition" : "3",
-					"yPosition" : "3",
-					"surface": "1", // the type of surefaces are 1.Bare Floor, 2. Low-pile carpter, 3.High-pile carpet
-					// paths
-					"right": "1",
-					"left": "1",
-					"up": "1",
-					"down": "1",
-					"charge": "0",
-					"dirt":"1"					
-				},
-				
-				{
-					"xPosition" : "0",
-					"yPosition" : "4",
-					"surface": "1", // the type of surefaces are 1.Bare Floor, 2. Low-pile carpter, 3.High-pile carpet
-					// paths
-					"right": "1",
-					"left": "2",
-					"up": "2",
-					"down": "1",
-					"charge": "0",
-					"dirt":"1"					
-				},
-				
-				{
-					"xPosition" : "1",
-					"yPosition" : "4",
-					"surface": "1", // the type of surefaces are 1.Bare Floor, 2. Low-pile carpter, 3.High-pile carpet
-					// paths
-					"right": "1",
-					"left": "1",
-					"up": "2",
-					"down": "1",
-					"charge": "0",
-					"dirt":"1"					
-				},
-				{
-					"xPosition" : "2",
-					"yPosition" : "4",
-					"surface": "1", // the type of surefaces are 1.Bare Floor, 2. Low-pile carpter, 3.High-pile carpet
-					// paths
-					"right": "1",
-					"left": "1",
-					"up": "2",
-					"down": "1",
-					"charge": "0",
-					"dirt":"1"					
-				},
-				
-				{
-					"xPosition" : "3",
-					"yPosition" : "4",
-					"surface": "1", // the type of surefaces are 1.Bare Floor, 2. Low-pile carpter, 3.High-pile carpet
-					// paths
-					"right": "2",
-					"left": "1",
-					"up": "2",
-					"down": "1",
-					"charge": "0",
-					"dirt":"1"					
-				}
-				
-			]
-		},
-		
-		{
-			"id" : "hallway",
-			"cell": [
-				
-				{
-					"xPosition" : "4",
-					"yPosition" : "0",
-					"surface": "3", // the type of surefaces are 1.Bare Floor, 2. Low-pile carpter, 3.High-pile carpet
-					// paths
-					"right": "1",
-					"left": "2",
-					"up": "1",
-					"down": "4",
-					"charge": "0",
-					"dirt":"2"					
-				},
-				
-				{
-					"xPosition" : "5",
-					"yPosition" : "0",
-					"surface": "3", // the type of surefaces are 1.Bare Floor, 2. Low-pile carpter, 3.High-pile carpet
-					// paths
-					"right": "2",
-					"left": "1",
-					"up": "1",
-					"down": "2",
-					"charge": "0",
-					"dirt":"1"					
-				},
-			
-			{
-					"xPosition" : "4",
-					"yPosition" : "1",
-					"surface": "3", // the type of surefaces are 1.Bare Floor, 2. Low-pile carpter, 3.High-pile carpet
-					// paths
-					"right": "1",
-					"left": "2",
-					"up": "1",
-					"down": "1",
-					"charge": "0",
-					"dirt":"2"					
-				},
-				
-				{
-					"xPosition" : "5",
-					"yPosition" : "1",
-					"surface": "3", // the type of surefaces are 1.Bare Floor, 2. Low-pile carpter, 3.High-pile carpet
-					// paths
-					"right": "2",
-					"left": "1",
-					"up": "1",
-					"down": "1",
-					"charge": "0",
-					"dirt":"1"					
-				},
-				
-				{
-					"xPosition" : "4",
-					"yPosition" : "2",
-					"surface": "3", // the type of surefaces are 1.Bare Floor, 2. Low-pile carpter, 3.High-pile carpet
-					// paths
-					"right": "1",
-					"left": "2",
-					"up": "1",
-					"down": "1",
-					"charge": "0",
-					"dirt":"2"					
-				},
-				
-				{
-					"xPosition" : "5",
-					"yPosition" : "2",
-					"surface": "3", // the type of surefaces are 1.Bare Floor, 2. Low-pile carpter, 3.High-pile carpet
-					// paths
-					"right": "2",
-					"left": "1",
-					"up": "1",
-					"down": "1",
-					"charge": "0",
-					"dirt":"1"					
-				},
-				
-				{
-					"xPosition" : "4",
-					"yPosition" : "3",
-					"surface": "3", // the type of surefaces are 1.Bare Floor, 2. Low-pile carpter, 3.High-pile carpet
-					// paths
-					"right": "1",
-					"left": "1",
-					"up": "1",
-					"down": "1",
-					"charge": "0",
-					"dirt":"1"					
-				},
-				
-				{
-					"xPosition" : "5",
-					"yPosition" : "3",
-					"surface": "3", // the type of surefaces are 1.Bare Floor, 2. Low-pile carpter, 3.High-pile carpet
-					// paths
-					"right": "2",
-					"left": "1",
-					"up": "1",
-					"down": "1",
-					"charge": "0",
-					"dirt":"1"					
-				},
-				
-				{
-					"xPosition" : "4",
-					"yPosition" : "4",
-					"surface": "3", // the type of surefaces are 1.Bare Floor, 2. Low-pile carpter, 3.High-pile carpet
-					// paths
-					"right": "1",
-					"left": "2",
-					"up": "1",
-					"down": "1",
-					"charge": "0",
-					"dirt":"2"					
-				},
-				
-				{
-					"xPosition" : "5",
-					"yPosition" : "4",
-					"surface": "3", // the type of surefaces are 1.Bare Floor, 2. Low-pile carpter, 3.High-pile carpet
-					// paths
-					"right": "2",
-					"left": "1",
-					"up": "1",
-					"down": "1",
-					"charge": "0",
-					"dirt":"1"					
-				},
-				
-				{
-					"xPosition" : "4",
-					"yPosition" : "5",
-					"surface": "3", // the type of surefaces are 1.Bare Floor, 2. Low-pile carpter, 3.High-pile carpet
-					// paths
-					"right": "1",
-					"left": "2",
-					"up": "1",
-					"down": "1",
-					"charge": "0",
-					"dirt":"2"					
-				},
-				
-				{
-					"xPosition" : "5",
-					"yPosition" : "5",
-					"surface": "3", // the type of surefaces are 1.Bare Floor, 2. Low-pile carpter, 3.High-pile carpet
-					// paths
-					"right": "2",
-					"left": "1",
-					"up": "1",
-					"down": "1",
-					"charge": "0",
-					"dirt":"2"					
-				},
-				
-				{
-					"xPosition" : "4",
-					"yPosition" : "6",
-					"surface": "3", // the type of surefaces are 1.Bare Floor, 2. Low-pile carpter, 3.High-pile carpet
-					// paths
-					"right": "1",
-					"left": "2",
-					"up": "1",
-					"down": "1",
-					"charge": "0",
-					"dirt":"2"					
-				},
-				
-				{
-					"xPosition" : "5",
-					"yPosition" : "6",
-					"surface": "3", // the type of surefaces are 1.Bare Floor, 2. Low-pile carpter, 3.High-pile carpet
-					// paths
-					"right": "2",
-					"left": "1",
-					"up": "1",
-					"down": "1",
-					"charge": "0",
-					"dirt":"1"					
-				},
-				{
-					"xPosition" : "4",
-					"yPosition" : "7",
-					"surface": "3", // the type of surefaces are 1.Bare Floor, 2. Low-pile carpter, 3.High-pile carpet
-					// paths
-					"right": "1",
-					"left": "1",
-					"up": "2",
-					"down": "1",
-					"charge": "0",
-					"dirt":"1"					
-				},
-				{
-					"xPosition" : "5",
-					"yPosition" : "7",
-					"surface": "3", // the type of surefaces are 1.Bare Floor, 2. Low-pile carpter, 3.High-pile carpet
-					// paths
-					"right": "1",
-					"left": "1",
-					"up": "2",
-					"down": "1",
-					"charge": "0",
-					"dirt":"3"					
-				}				
-			]
-			
-			
-			
-		},
-		
-		{
-			"id" : "roomB",
-			"cell": [
-				
-				{
-					"xPosition" : "0",
-					"yPosition" : "7",
-					"surface": "2", // the type of surefaces are 1.Bare Floor, 2. Low-pile carpter, 3.High-pile carpet
-					// paths
-					"right": "1",
-					"left": "2",
-					"up": "1",
-					"down": "2",
-					"charge": "0",
-					"dirt":"1"					
-				},
-				
-				{
-					"xPosition" : "1",
-					"yPosition" : "7",
-					"surface": "2", // the type of surefaces are 1.Bare Floor, 2. Low-pile carpter, 3.High-pile carpet
-					// paths
-					"right": "1",
-					"left": "1",
-					"up": "1",
-					"down": "2",
-					"charge": "0",
-					"dirt":"1"					
-				},
-				
-				
-				{
-					"xPosition" : "2",
-					"yPosition" : "7",
-					"surface": "2", // the type of surefaces are 1.Bare Floor, 2. Low-pile carpter, 3.High-pile carpet
-					// paths
-					"right": "1",
-					"left": "1",
-					"up": "1",
-					"down": "2",
-					"charge": "0",
-					"dirt":"1"					
-				},
-				
-				{
-					"xPosition" : "3",
-					"yPosition" : "7",
-					"surface": "2", // the type of surefaces are 1.Bare Floor, 2. Low-pile carpter, 3.High-pile carpet
-					// paths
-					"right": "1",
-					"left": "1",
-					"up": "1",
-					"down": "2",
-					"charge": "0",
-					"dirt":"1"					
-				},
-				
-				{
-					"xPosition" : "0",
-					"yPosition" : "8",
-					"surface": "2", // the type of surefaces are 1.Bare Floor, 2. Low-pile carpter, 3.High-pile carpet
-					// paths
-					"right": "1",
-					"left": "2",
-					"up": "1",
-					"down": "1",
-					"charge": "0",
-					"dirt":"1"					
-				},
-				
-				
-				{
-					"xPosition" : "1",
-					"yPosition" : "8",
-					"surface": "2", // the type of surefaces are 1.Bare Floor, 2. Low-pile carpter, 3.High-pile carpet
-					// paths
-					"right": "1",
-					"left": "1",
-					"up": "1",
-					"down": "1",
-					"charge": "0",
-					"dirt":"1"					
-				},
-				
-				{
-					"xPosition" : "2",
-					"yPosition" : "8",
-					"surface": "2", // the type of surefaces are 1.Bare Floor, 2. Low-pile carpter, 3.High-pile carpet
-					// paths
-					"right": "1",
-					"left": "1",
-					"up": "1",
-					"down": "1",
-					"charge": "0",
-					"dirt":"1"					
-				},
-				
-				{
-					"xPosition" : "3",
-					"yPosition" : "8",
-					"surface": "2", // the type of surefaces are 1.Bare Floor, 2. Low-pile carpter, 3.High-pile carpet
-					// paths
-					"right": "2",
-					"left": "1",
-					"up": "1",
-					"down": "1",
-					"charge": "0",
-					"dirt":"1"					
-				},
-				
-				{
-					"xPosition" : "0",
-					"yPosition" : "9",
-					"surface": "2", // the type of surefaces are 1.Bare Floor, 2. Low-pile carpter, 3.High-pile carpet
-					// paths
-					"right": "1",
-					"left": "2",
-					"up": "2",
-					"down": "1",
-					"charge": "0",
-					"dirt":"1"					
-				},
-				
-				{
-					"xPosition" : "1",
-					"yPosition" : "9",
-					"surface": "2", // the type of surefaces are 1.Bare Floor, 2. Low-pile carpter, 3.High-pile carpet
-					// paths
-					"right": "1",
-					"left": "1",
-					"up": "2",
-					"down": "1",
-					"charge": "0",
-					"dirt":"1"					
-				},
-				
-				{
-					"xPosition" : "2",
-					"yPosition" : "9",
-					"surface": "2", // the type of surefaces are 1.Bare Floor, 2. Low-pile carpter, 3.High-pile carpet
-					// paths
-					"right": "1",
-					"left": "1",
-					"up": "2",
-					"down": "1",
-					"charge": "0",
-					"dirt":"1"					
-				},
-				
-				{
-					"xPosition" : "3",
-					"yPosition" : "9",
-					"surface": "2", // the type of surefaces are 1.Bare Floor, 2. Low-pile carpter, 3.High-pile carpet
-					// paths
-					"right": "2",
-					"left": "1",
-					"up": "2",
-					"down": "1",
-					"charge": "0",
-					"dirt":"1"					
-				}
-				
-			
-			
-			]
-			
-		}
-		
-		
-		
-		
-		
-		
-	]
-	
-	
-	
-	
+{
+    "Homelayout":[
+        {
+            "id":"roomA",
+            "cell":[
+                {
+                    "xPosition":"0",
+                    "yPosition":"0",
+                    "surface":"1",
+                    "right":"1",
+                    "left":"2",
+                    "up":"1",
+                    "down":"2",
+                    "charge":"1",
+                    "dirt":"1"
+                },
+                {
+                    "xPosition":"1",
+                    "yPosition":"0",
+                    "surface":"1",
+                    "right":"1",
+                    "left":"1",
+                    "up":"1",
+                    "down":"2",
+                    "charge":"0",
+                    "dirt":"1"
+                },
+                {
+                    "xPosition":"2",
+                    "yPosition":"0",
+                    "surface":"1",
+                    "right":"1",
+                    "left":"1",
+                    "up":"1",
+                    "down":"2",
+                    "charge":"0",
+                    "dirt":"1"
+                },
+                {
+                    "xPosition":"3",
+                    "yPosition":"0",
+                    "surface":"1",
+                    "right":"2",
+                    "left":"1",
+                    "up":"1",
+                    "down":"2",
+                    "charge":"0",
+                    "dirt":"1"
+                },
+                {
+                    "xPosition":"0",
+                    "yPosition":"1",
+                    "surface":"1",
+                    "right":"1",
+                    "left":"2",
+                    "up":"1",
+                    "down":"1",
+                    "charge":"0",
+                    "dirt":"1"
+                },
+                {
+                    "xPosition":"1",
+                    "yPosition":"1",
+                    "surface":"1",
+                    "right":"1",
+                    "left":"1",
+                    "up":"1",
+                    "down":"1",
+                    "charge":"0",
+                    "dirt":"1"
+                },
+                {
+                    "xPosition":"2",
+                    "yPosition":"1",
+                    "surface":"1",
+                    "right":"1",
+                    "left":"1",
+                    "up":"1",
+                    "down":"1",
+                    "charge":"0",
+                    "dirt":"1"
+                },
+                {
+                    "xPosition":"3",
+                    "yPosition":"1",
+                    "surface":"1",
+                    "right":"2",
+                    "left":"1",
+                    "up":"1",
+                    "down":"1",
+                    "charge":"0",
+                    "dirt":"1"
+                },
+                {
+                    "xPosition":"0",
+                    "yPosition":"2",
+                    "surface":"1",
+                    "right":"1",
+                    "left":"2",
+                    "up":"1",
+                    "down":"1",
+                    "charge":"0",
+                    "dirt":"1"
+                },
+                {
+                    "xPosition":"1",
+                    "yPosition":"2",
+                    "surface":"1",
+                    "right":"1",
+                    "left":"1",
+                    "up":"1",
+                    "down":"1",
+                    "charge":"0",
+                    "dirt":"1"
+                },
+                {
+                    "xPosition":"2",
+                    "yPosition":"2",
+                    "surface":"1",
+                    "right":"1",
+                    "left":"1",
+                    "up":"1",
+                    "down":"1",
+                    "charge":"0",
+                    "dirt":"1"
+                },
+                {
+                    "xPosition":"3",
+                    "yPosition":"2",
+                    "surface":"1",
+                    "right":"2",
+                    "left":"1",
+                    "up":"1",
+                    "down":"1",
+                    "charge":"0",
+                    "dirt":"1"
+                },
+                {
+                    "xPosition":"0",
+                    "yPosition":"3",
+                    "surface":"1",
+                    "right":"1",
+                    "left":"2",
+                    "up":"1",
+                    "down":"1",
+                    "charge":"0",
+                    "dirt":"1"
+                },
+                {
+                    "xPosition":"1",
+                    "yPosition":"3",
+                    "surface":"1",
+                    "right":"1",
+                    "left":"1",
+                    "up":"1",
+                    "down":"1",
+                    "charge":"0",
+                    "dirt":"1"
+                },
+                {
+                    "xPosition":"2",
+                    "yPosition":"3",
+                    "surface":"1",
+                    "right":"1",
+                    "left":"1",
+                    "up":"1",
+                    "down":"1",
+                    "charge":"0",
+                    "dirt":"1"
+                },
+                {
+                    "xPosition":"3",
+                    "yPosition":"3",
+                    "surface":"1",
+                    "right":"1",
+                    "left":"1",
+                    "up":"1",
+                    "down":"1",
+                    "charge":"0",
+                    "dirt":"1"
+                },
+                {
+                    "xPosition":"0",
+                    "yPosition":"4",
+                    "surface":"1",
+                    "right":"1",
+                    "left":"2",
+                    "up":"2",
+                    "down":"1",
+                    "charge":"0",
+                    "dirt":"1"
+                },
+                {
+                    "xPosition":"1",
+                    "yPosition":"4",
+                    "surface":"1",
+                    "right":"1",
+                    "left":"1",
+                    "up":"2",
+                    "down":"1",
+                    "charge":"0",
+                    "dirt":"1"
+                },
+                {
+                    "xPosition":"2",
+                    "yPosition":"4",
+                    "surface":"1",
+                    "right":"1",
+                    "left":"1",
+                    "up":"2",
+                    "down":"1",
+                    "charge":"0",
+                    "dirt":"1"
+                },
+                {
+                    "xPosition":"3",
+                    "yPosition":"4",
+                    "surface":"1",
+                    "right":"2",
+                    "left":"1",
+                    "up":"2",
+                    "down":"1",
+                    "charge":"0",
+                    "dirt":"1"
+                }
+            ]
+        },
+        {
+            "id":"hallway",
+            "cell":[
+                {
+                    "xPosition":"4",
+                    "yPosition":"0",
+                    "surface":"3",
+                    "right":"1",
+                    "left":"2",
+                    "up":"1",
+                    "down":"4",
+                    "charge":"0",
+                    "dirt":"2"
+                },
+                {
+                    "xPosition":"5",
+                    "yPosition":"0",
+                    "surface":"3",
+                    "right":"2",
+                    "left":"1",
+                    "up":"1",
+                    "down":"2",
+                    "charge":"0",
+                    "dirt":"1"
+                },
+                {
+                    "xPosition":"4",
+                    "yPosition":"1",
+                    "surface":"3",
+                    "right":"1",
+                    "left":"2",
+                    "up":"1",
+                    "down":"1",
+                    "charge":"0",
+                    "dirt":"2"
+                },
+                {
+                    "xPosition":"5",
+                    "yPosition":"1",
+                    "surface":"3",
+                    "right":"2",
+                    "left":"1",
+                    "up":"1",
+                    "down":"1",
+                    "charge":"0",
+                    "dirt":"1"
+                },
+                {
+                    "xPosition":"4",
+                    "yPosition":"2",
+                    "surface":"3",
+                    "right":"1",
+                    "left":"2",
+                    "up":"1",
+                    "down":"1",
+                    "charge":"0",
+                    "dirt":"2"
+                },
+                {
+                    "xPosition":"5",
+                    "yPosition":"2",
+                    "surface":"3",
+                    "right":"2",
+                    "left":"1",
+                    "up":"1",
+                    "down":"1",
+                    "charge":"0",
+                    "dirt":"1"
+                },
+                {
+                    "xPosition":"4",
+                    "yPosition":"3",
+                    "surface":"3",
+                    "right":"1",
+                    "left":"1",
+                    "up":"1",
+                    "down":"1",
+                    "charge":"0",
+                    "dirt":"1"
+                },
+                {
+                    "xPosition":"5",
+                    "yPosition":"3",
+                    "surface":"3",
+                    "right":"2",
+                    "left":"1",
+                    "up":"1",
+                    "down":"1",
+                    "charge":"0",
+                    "dirt":"1"
+                },
+                {
+                    "xPosition":"4",
+                    "yPosition":"4",
+                    "surface":"3",
+                    "right":"1",
+                    "left":"2",
+                    "up":"1",
+                    "down":"1",
+                    "charge":"0",
+                    "dirt":"2"
+                },
+                {
+                    "xPosition":"5",
+                    "yPosition":"4",
+                    "surface":"3",
+                    "right":"2",
+                    "left":"1",
+                    "up":"1",
+                    "down":"1",
+                    "charge":"0",
+                    "dirt":"1"
+                },
+                {
+                    "xPosition":"4",
+                    "yPosition":"5",
+                    "surface":"3",
+                    "right":"1",
+                    "left":"2",
+                    "up":"1",
+                    "down":"1",
+                    "charge":"0",
+                    "dirt":"2"
+                },
+                {
+                    "xPosition":"5",
+                    "yPosition":"5",
+                    "surface":"3",
+                    "right":"2",
+                    "left":"1",
+                    "up":"1",
+                    "down":"1",
+                    "charge":"0",
+                    "dirt":"2"
+                },
+                {
+                    "xPosition":"4",
+                    "yPosition":"6",
+                    "surface":"3",
+                    "right":"1",
+                    "left":"2",
+                    "up":"1",
+                    "down":"1",
+                    "charge":"0",
+                    "dirt":"2"
+                },
+                {
+                    "xPosition":"5",
+                    "yPosition":"6",
+                    "surface":"3",
+                    "right":"2",
+                    "left":"1",
+                    "up":"1",
+                    "down":"1",
+                    "charge":"0",
+                    "dirt":"1"
+                },
+                {
+                    "xPosition":"4",
+                    "yPosition":"7",
+                    "surface":"3",
+                    "right":"1",
+                    "left":"1",
+                    "up":"2",
+                    "down":"1",
+                    "charge":"0",
+                    "dirt":"1"
+                },
+                {
+                    "xPosition":"5",
+                    "yPosition":"7",
+                    "surface":"3",
+                    "right":"1",
+                    "left":"1",
+                    "up":"2",
+                    "down":"1",
+                    "charge":"0",
+                    "dirt":"3"
+                }
+            ]
+        },
+        {
+            "id":"roomB",
+            "cell":[
+                {
+                    "xPosition":"0",
+                    "yPosition":"7",
+                    "surface":"2",
+                    "right":"1",
+                    "left":"2",
+                    "up":"1",
+                    "down":"2",
+                    "charge":"0",
+                    "dirt":"1"
+                },
+                {
+                    "xPosition":"1",
+                    "yPosition":"7",
+                    "surface":"2",
+                    "right":"1",
+                    "left":"1",
+                    "up":"1",
+                    "down":"2",
+                    "charge":"0",
+                    "dirt":"1"
+                },
+                {
+                    "xPosition":"2",
+                    "yPosition":"7",
+                    "surface":"2",
+                    "right":"1",
+                    "left":"1",
+                    "up":"1",
+                    "down":"2",
+                    "charge":"0",
+                    "dirt":"1"
+                },
+                {
+                    "xPosition":"3",
+                    "yPosition":"7",
+                    "surface":"2",
+                    "right":"1",
+                    "left":"1",
+                    "up":"1",
+                    "down":"2",
+                    "charge":"0",
+                    "dirt":"1"
+                },
+                {
+                    "xPosition":"0",
+                    "yPosition":"8",
+                    "surface":"2",
+                    "right":"1",
+                    "left":"2",
+                    "up":"1",
+                    "down":"1",
+                    "charge":"0",
+                    "dirt":"1"
+                },
+                {
+                    "xPosition":"1",
+                    "yPosition":"8",
+                    "surface":"2",
+                    "right":"1",
+                    "left":"1",
+                    "up":"1",
+                    "down":"1",
+                    "charge":"0",
+                    "dirt":"1"
+                },
+                {
+                    "xPosition":"2",
+                    "yPosition":"8",
+                    "surface":"2",
+                    "right":"1",
+                    "left":"1",
+                    "up":"1",
+                    "down":"1",
+                    "charge":"0",
+                    "dirt":"1"
+                },
+                {
+                    "xPosition":"3",
+                    "yPosition":"8",
+                    "surface":"2",
+                    "right":"2",
+                    "left":"1",
+                    "up":"1",
+                    "down":"1",
+                    "charge":"0",
+                    "dirt":"1"
+                },
+                {
+                    "xPosition":"0",
+                    "yPosition":"9",
+                    "surface":"2",
+                    "right":"1",
+                    "left":"2",
+                    "up":"2",
+                    "down":"1",
+                    "charge":"0",
+                    "dirt":"1"
+                },
+                {
+                    "xPosition":"1",
+                    "yPosition":"9",
+                    "surface":"2",
+                    "right":"1",
+                    "left":"1",
+                    "up":"2",
+                    "down":"1",
+                    "charge":"0",
+                    "dirt":"1"
+                },
+                {
+                    "xPosition":"2",
+                    "yPosition":"9",
+                    "surface":"2",
+                    "right":"1",
+                    "left":"1",
+                    "up":"2",
+                    "down":"1",
+                    "charge":"0",
+                    "dirt":"1"
+                },
+                {
+                    "xPosition":"3",
+                    "yPosition":"9",
+                    "surface":"2",
+                    "right":"2",
+                    "left":"1",
+                    "up":"2",
+                    "down":"1",
+                    "charge":"0",
+                    "dirt":"1"
+                }
+            ]
+        }
+    ]
 }
