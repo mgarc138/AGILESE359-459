@@ -19,7 +19,7 @@ public class Cell {
 
     public Cell(int xPosition, int yPosition, int rightPath, int leftPath, int upPath, int downPath, int charge, int dirt, int surface){
 
-        point = new  CoordinatePoint(xPosition, yPosition);      
+        point = new CoordinatePoint(xPosition, yPosition);
         setRight(rightPath);
         setLeft(leftPath);
         setUp(upPath);
@@ -47,8 +47,8 @@ public class Cell {
                 ", left=" + left +
                 ", up=" + up +
                 ", down=" + down +
-                ", charge=" + charge +
-                ", dirt=" + dirt +
+                ", charge=" + getCharge() +
+                ", dirt=" + getDirt() +
                 ", surface=" + surface +
                 '}';
     }
@@ -130,8 +130,8 @@ public class Cell {
         this.down = down;
     }
 
-    public int getCharge() {
-        return charge;
+    public boolean getCharge() {
+        return charge == 1;
     }
 
     public void setCharge(int charge) {
@@ -143,9 +143,14 @@ public class Cell {
         this.charge = charge;
     }
 
-    public int getDirt() {
+    /**
+     * Returns a boolean whether there is dirt or not in the cell
+     *
+     * @return boolean
+     */
+    public boolean getDirt() {
 
-        return dirt;
+        return dirt == 1;
     }
 
     public void setDirt(int dirt) {
