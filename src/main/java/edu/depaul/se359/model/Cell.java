@@ -17,6 +17,21 @@ public class Cell {
     private int dirt;
     private int surface;
 
+    public Cell(int xPosition, int yPosition, int rightPath, int leftPath, int upPath, int downPath, int charge, int dirt, int surface){
+
+        setxPosition(xPosition);
+        setyPosition(yPosition);
+        setRight(rightPath);
+        setLeft(leftPath);
+        setUp(upPath);
+        setDown(downPath);
+        setCharge(charge);
+        setDirt(dirt);
+        setSurface(surface);
+    }
+
+
+
     public int getSurface() {
         return surface;
     }
@@ -45,6 +60,12 @@ public class Cell {
     }
 
     public void setxPosition(int xPosition) {
+
+        if(xPosition < 0){
+
+            // exection
+        }
+
         this.xPosition = xPosition;
     }
 
@@ -53,6 +74,12 @@ public class Cell {
     }
 
     public void setyPosition(int yPosition) {
+
+        if(yPosition < 0){
+
+            // exection
+        }
+
         this.yPosition = yPosition;
     }
 
@@ -61,6 +88,17 @@ public class Cell {
     }
 
     public void setRight(int right) {
+        
+        if(right > 4){
+
+            // exception
+        }
+
+        if(right < 1){
+
+            // exception
+        }
+
         this.right = right;
     }
 
@@ -69,6 +107,17 @@ public class Cell {
     }
 
     public void setLeft(int left) {
+
+        if(left > 4){
+
+            // exception
+        }
+
+        if(left < 1){
+
+            // exception
+        }
+
         this.left = left;
     }
 
@@ -77,6 +126,17 @@ public class Cell {
     }
 
     public void setUp(int up) {
+
+        if(up > 4){
+
+            //exception
+        }
+
+        if(up < 0){
+
+            // exception
+        }
+
         this.up = up;
     }
 
@@ -85,6 +145,18 @@ public class Cell {
     }
 
     public void setDown(int down) {
+        
+
+        if(up > 4){
+
+            // exception
+        }
+
+        if(up < 0){
+
+            // exception
+        }
+
         this.down = down;
     }
 
@@ -93,14 +165,26 @@ public class Cell {
     }
 
     public void setCharge(int charge) {
+        if(charge < 0){
+
+            // exception
+        }
+
         this.charge = charge;
     }
 
     public int getDirt() {
+
         return dirt;
     }
 
     public void setDirt(int dirt) {
+
+        if(dirt < 0){
+
+            //exception
+        }
+
         this.dirt = dirt;
     }
 }
