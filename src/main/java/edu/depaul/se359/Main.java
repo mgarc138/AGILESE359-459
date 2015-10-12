@@ -14,7 +14,7 @@ import java.io.IOException;
  */
 public class Main {
     public static void main(String[] args) throws IOException {
-        HomeLayoutList layouts = LayoutParser.parseHomeLayout("./assets/test.json");
+        HomeLayoutList layouts = LayoutParser.parseHomeLayout("./FloorPlans/FloorPlanLayoutHome1.json");
 
         System.out.println(layouts);
     }

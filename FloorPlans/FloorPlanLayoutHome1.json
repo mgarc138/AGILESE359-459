@@ -1,8 +1,8 @@
 {
-    "Homelayout":[
+    "HomeLayout": [
         {
             "id":"roomA",
-            "cell":[
+            "cells": [
                 {
                     "xPosition":"0",
                     "yPosition":"0",
