@@ -42,8 +42,7 @@ public class Cell {
     @Override
     public String toString() {
         return "Cell{" +
-                "xPosition=" + xPosition +
-                ", yPosition=" + yPosition +
+                "point=" + point +
                 ", right=" + right +
                 ", left=" + left +
                 ", up=" + up +
@@ -53,10 +52,6 @@ public class Cell {
                 ", surface=" + surface +
                 '}';
     }
-
-    
-
-    
 
     public int getRight() {
         return right;

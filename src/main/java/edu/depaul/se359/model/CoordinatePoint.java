@@ -1,17 +1,24 @@
+package edu.depaul.se359.model;
+
 public class CoordinatePoint {
 
 	private int xPoint;
 	private int yPoint;
 
-	public CoordinatePoint(int x, int y){
+    public CoordinatePoint(int x, int y) {
 
 		setxPosition(x);
 		setyPosition(y);
-
-
 	}
 
- 
+    @Override
+    public String toString() {
+        return "CoordinatePoint{" +
+                "xPoint=" + xPoint +
+                ", yPoint=" + yPoint +
+                '}';
+    }
+
  public void setxPosition(int xPosition) {
 
  		// we want to deal with just one quadrant in the plane 
@@ -21,7 +28,7 @@ public class CoordinatePoint {
             // exection
         }
 
-        this.xPosition = xPosition;
+     this.xPoint = xPosition;
     }
 
 
@@ -34,7 +41,7 @@ public void setyPosition(int yPosition) {
             // exection
         }
 
-        this.yPosition = yPosition;
+    this.yPoint = yPosition;
     }
 
 
@@ -53,8 +60,8 @@ public void setyPosition(int yPosition) {
 	}
 
 
-	@override
-	public boolean equals(Object obj) {
+    @Override
+    public boolean equals(Object obj) {
 		if (obj == null) {
 			return false;
 		}
