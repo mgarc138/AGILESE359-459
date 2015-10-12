@@ -20,6 +20,7 @@ public class Cell {
     public Cell(int xPosition, int yPosition, int rightPath, int leftPath, int upPath, int downPath, int charge, int dirt, int surface){
 
         point = new CoordinatePoint(xPosition, yPosition);
+
         setRight(rightPath);
         setLeft(leftPath);
         setUp(upPath);
