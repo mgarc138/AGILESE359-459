@@ -7,7 +7,7 @@ package edu.depaul.se359.model;
  * Assignment: SE459
  */
 public class Cell {
-    
+
     private CoordinatePoint point;
     private int right;
     private int left;
@@ -17,7 +17,7 @@ public class Cell {
     private int dirt;
     private int surface;
 
-    public Cell(int xPosition, int yPosition, int rightPath, int leftPath, int upPath, int downPath, int charge, int dirt, int surface){
+    public Cell(int xPosition, int yPosition, int rightPath, int leftPath, int upPath, int downPath, int charge, int dirt, int surface) {
 
         point = new CoordinatePoint(xPosition, yPosition);
 
@@ -30,7 +30,13 @@ public class Cell {
         setSurface(surface);
     }
 
+    public CoordinatePoint getPoint() {
+        return point;
+    }
 
+    public void setPoint(CoordinatePoint point) {
+        this.point = point;
+    }
 
     public int getSurface() {
         return surface;
@@ -59,13 +65,13 @@ public class Cell {
     }
 
     public void setRight(int right) {
-        
-        if(right > 4){
+
+        if (right > 4) {
 
             // exception
         }
 
-        if(right < 1){
+        if (right < 1) {
 
             // exception
         }
@@ -79,12 +85,12 @@ public class Cell {
 
     public void setLeft(int left) {
 
-        if(left > 4){
+        if (left > 4) {
 
             // exception
         }
 
-        if(left < 1){
+        if (left < 1) {
 
             // exception
         }
@@ -98,12 +104,12 @@ public class Cell {
 
     public void setUp(int up) {
 
-        if(up > 4){
+        if (up > 4) {
 
             //exception
         }
 
-        if(up < 0){
+        if (up < 0) {
 
             // exception
         }
@@ -116,14 +122,14 @@ public class Cell {
     }
 
     public void setDown(int down) {
-        
 
-        if(up > 4){
+
+        if (up > 4) {
 
             // exception
         }
 
-        if(up < 0){
+        if (up < 0) {
 
             // exception
         }
@@ -136,7 +142,7 @@ public class Cell {
     }
 
     public void setCharge(int charge) {
-        if(charge < 0){
+        if (charge < 0) {
 
             // exception
         }
@@ -156,7 +162,7 @@ public class Cell {
 
     public void setDirt(int dirt) {
 
-        if(dirt < 0){
+        if (dirt < 0) {
 
             //exception
         }
