@@ -1,0 +1,77 @@
+import java.util.*;
+public class vacuum {
+	
+	private boolean vacuumState = false; // can be on or off
+	private boolean moveState = false;  // the vacuum can move or not 
+	
+	
+	public vacuum(){
+		
+		
+	}
+	
+	
+	public void On(){
+		
+		this.vacuumState = true;
+		
+	}
+	
+	
+	public void Off(){
+		
+		this.vacuumState = false;
+	}
+	
+	
+	public void StopVacuum(){
+		
+		this.moveState = false;
+		
+	}
+	
+	
+	public void MoveVacuum(){
+		
+		this.moveState = true;
+		
+		while(moveState == true){
+			
+			System.out.println("infinit loop");
+			
+		}
+		
+		System.out.println("outside of the infinit loop");
+		
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+	public static void main(String[] args) {
+		
+		try {
+			
+			vacuum obj1 = new vacuum();
+			obj1.On();
+			obj1.MoveVacuum();
+		Thread.sleep(4000);
+		obj1.StopVacuum();
+		
+		}
+		catch( Exception ex){
+			
+			
+		}
+		
+
+	}
+
+}
