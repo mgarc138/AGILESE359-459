@@ -9,4 +9,16 @@ public class CoordinatePoint extends Point {
     public CoordinatePoint(int x, int y) {
         super(x, y);
     }
+    
+    /*
+     * It produce a unique integer id to be store it and ask back in the HashMap for the specific cell
+     * @ return integer
+     */
+    public int hashCode(){
+    	
+    	int hash = 87 + (7 + this.x);
+    	    hash = 87 * (hash + this.y);
+    	
+    	    return hash;	
+    }
 }

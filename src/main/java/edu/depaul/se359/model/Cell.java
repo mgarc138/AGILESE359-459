@@ -29,7 +29,7 @@ public class Cell {
         setLeft(leftPath);
         setUp(upPath);
         setDown(downPath);
-        setCharge(charge);
+        setAChargingStation(charge);
         setDirt(dirt);
         setSurface(surface);
     }
@@ -82,7 +82,7 @@ public class Cell {
                 ", left=" + left +
                 ", up=" + up +
                 ", down=" + down +
-                ", charge=" + getCharge() +
+                ", charge=" + CheckisaChargingStation() +
                 ", dirt=" + getDirt() +
                 ", surface=" + surface +
                 '}';
@@ -386,6 +386,19 @@ public class Cell {
     	double result = Math.sqrt(x + y);
     	
     	return result;
+    }
+    
+    /*
+     *this method returns a HashCode from the Coordinate Point object 
+     * Our Floor class uses this in order to assigned a key to the given cell in the map
+     * Returns an Object Integer
+     */
+    public Integer getCoordinatePointHashCodeKey(){
+    	
+    	Integer result = (Integer) this.point.hashCode();
+    	
+    	return result;
+    	
     }
     
     
