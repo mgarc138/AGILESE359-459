@@ -3,7 +3,7 @@ package edu.depaul.se359.model;
 /**
  * Created on 10/10/15.
  * Class: Cell.java
- * Author: eric
+ * Author: eric, marlon
  * Assignment: SE459
  */
 public class Cell {
@@ -13,7 +13,7 @@ public class Cell {
     private int left;
     private int up;
     private int down;
-    private int charge;
+    private boolean charge;
     private int dirt;
     private int surface;
     private Cell rightCell;
@@ -232,25 +232,49 @@ public class Cell {
     }
 
    
-    
-    public boolean getCharge() {
-        return charge == 1;
+   /*
+    * @returns True if this Cell Contains the charging station
+    *  or false if it doesn't 
+    */
+    public boolean CheckisaChargingStation() {
+        return charge;
     }
 
-    public void setCharge(int charge) {
-        if (charge < 0) {
-
-            // exception
+    /*
+     * Sets whether or not this Cell contains the charging station
+     * @param charge
+     */
+    public void setAChargingStation(int charge) {
+        if(charge == 0){
+        	this.charge = false;
         }
-
-        this.charge = charge;
+        
+        else if (charge == 1){
+        	
+        	this.charge = true;
+        }
+        
+        else {
+        	// exception
+        	
+        }   
     }
 
+    /*
+     * @return the amount of dirt that is present in the Cell
+     * 
+     */
+    
     public int getDirt() {
 
         return dirt;
     }
 
+    
+    /*
+     * Sets the amount of dirt present in the Cell in (units)
+     * 
+     */
     public void setDirt(int dirt) {
 
         if (dirt < 0) {
