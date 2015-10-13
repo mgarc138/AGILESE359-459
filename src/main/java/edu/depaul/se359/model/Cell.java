@@ -150,14 +150,9 @@ public class Cell {
         this.charge = charge;
     }
 
-    /**
-     * Returns a boolean whether there is dirt or not in the cell
-     *
-     * @return boolean
-     */
-    public boolean getDirt() {
+    public int getDirt() {
 
-        return dirt == 1;
+        return dirt;
     }
 
     public void setDirt(int dirt) {
