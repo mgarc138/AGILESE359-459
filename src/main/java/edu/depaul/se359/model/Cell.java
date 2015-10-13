@@ -362,5 +362,33 @@ public class Cell {
     	this.lowerCell = LCell;
     }
     
+    /*
+     * this method returns true if the cells are the same otherwise false
+     * @return boolean
+     * @param C Cell to compare with the current Cell
+     */
+    public boolean sameCell(Cell C){
+    	
+    	return (this.getX() == C.getX()) && (this.getY() == C.getY());
+    	
+    	
+    }
+    
+    /*
+     * this method calculates the distace between two cells
+     * @return double which is the distance between the two cells
+     * @param C Cell to calculate the distance with the current Cell
+     */
+    public double distance(Cell C){
+    	
+    	double x = Math.pow(this.getX() - C.getX(), 2);
+    	double y = Math.pow(this.getY() - C.getY(), 2);
+    	double result = Math.sqrt(x + y);
+    	
+    	return result;
+    }
+    
+    
+    
         
 }
