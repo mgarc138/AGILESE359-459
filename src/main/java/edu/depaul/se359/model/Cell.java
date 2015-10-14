@@ -21,7 +21,7 @@ public class Cell {
     private Cell upperCell;
     private Cell lowerCell;
 
-    public Cell(int xPosition, int yPosition, int rightPath, int leftPath, int upPath, int downPath, int charge, int dirt, int surface) {
+    public Cell(int xPosition, int yPosition, int rightPath, int leftPath, int upPath, int downPath, boolean charge, int dirt, int surface) {
 
         point = new CoordinatePoint(xPosition, yPosition);
 
@@ -52,8 +52,8 @@ public class Cell {
     	return this.point.y;
     	
     }
-    
-    /*
+
+    /**
      * @returns three types of surfaces
      * 1. bare floor
      * 2. low-pile
@@ -62,8 +62,8 @@ public class Cell {
     public int getSurface() {
     	return surface;
     }
-    
-    /*
+
+    /**
      * sets three types of surfaces
      * 1. bare floor
      * 2. low-pile
@@ -88,7 +88,7 @@ public class Cell {
                 '}';
     }
 
-    /*
+    /**
      * @return the path of the right Cell of this current cell
      * 1. unknown
      * 2. it is open
@@ -100,7 +100,7 @@ public class Cell {
         return right;
     }
 
-    /*
+    /**
      * Sets the path of the right Cell of this current cell
      * 1. unknown
      * 2. it is open
@@ -124,8 +124,8 @@ public class Cell {
         this.right = right;
     }
 
-    
-    /*
+
+    /**
      * @return the path of the left Cell of this current cell
      * 1. unknown
      * 2. it is open
@@ -136,8 +136,8 @@ public class Cell {
         return left;
     }
 
-    
-    /*
+
+    /**
      * Sets the path of the left Cell of this current cell
      * 1. unknown
      * 2. it is open
@@ -160,8 +160,8 @@ public class Cell {
         this.left = left;
     }
 
-    
-    /*
+
+    /**
      * @return the path of the above Cell of this current cell
      * 1. unknown
      * 2. it is open
@@ -172,7 +172,7 @@ public class Cell {
         return up;
     }
 
-    /*
+    /**
      * Sets the path of the above Cell of this current cell
      * 1. unknown
      * 2. it is open
@@ -195,8 +195,8 @@ public class Cell {
         this.up = up;
     }
 
-    
-    /*
+
+    /**
     * @return the path of the below Cell of this current cell
     * 1. unknown
     * 2. it is open
@@ -207,7 +207,7 @@ public class Cell {
         return down;
     }
 
-    /*
+    /**
      * Sets the path of the below Cell of this current cell
      * 1. unknown
      * 2. it is open
@@ -231,8 +231,8 @@ public class Cell {
         this.down = down;
     }
 
-   
-   /*
+
+    /**
     * @returns True if this Cell Contains the charging station
     *  or false if it doesn't 
     */
@@ -240,29 +240,16 @@ public class Cell {
         return charge;
     }
 
-    /*
+    /**
      * Sets whether or not this Cell contains the charging station
      * @param charge
      */
-    public void setAChargingStation(int charge) {
-        if(charge == 0){
-        	this.charge = false;
-        }
-        
-        else if (charge == 1){
-        	
-        	this.charge = true;
-        }
-        
-        else {
-        	// exception
-        	
-        }   
+    public void setAChargingStation(boolean charge) {
+        this.charge = charge;
     }
 
-    /*
+    /**
      * @return the amount of dirt that is present in the Cell
-     * 
      */
     
     public int getDirt() {
@@ -270,10 +257,9 @@ public class Cell {
         return dirt;
     }
 
-    
-    /*
+
+    /**
      * Sets the amount of dirt present in the Cell in (units)
-     * 
      */
     public void setDirt(int dirt) {
 
@@ -284,8 +270,8 @@ public class Cell {
 
         this.dirt = dirt;
     }
-    
-    /*
+
+    /**
      * @return the Cell that is to the right of this Cell. 
      * there is a posibility that this direction could be null because is blocked
      */
@@ -293,19 +279,19 @@ public class Cell {
     	
     	return this.rightCell;
     }
-    
-    /*
+
+    /**
      * sets the Cell that is to the right of this Cell.
-     * @param RCell. there is a posibility that could be null if the path for this direction is blocked
+     * @param RCell there is a posibility that could be null if the path for this direction is blocked
      */
     
     public void setRightCell(Cell RCell){
     	
     	this.rightCell = RCell;
     }
-    
-    
-    /*
+
+
+    /**
      * @return the Cell that is to the Left of this Cell. 
      * there is a posibility that this direction could be null because is blocked
      */
@@ -313,18 +299,18 @@ public class Cell {
     	
     	return this.leftCell;
     }
-    
-    /*
+
+    /**
      * sets the Cell that is to the left of this Cell.
-     * @param LCell. there is a posibility that could be null if the path for this direction is blocked
+     * @param LCell there is a posibility that could be null if the path for this direction is blocked
      */
     
     public void setLeftCell(Cell LCell){
     	
     	this.leftCell = LCell;
     }
-    
-    /*
+
+    /**
      * @return the Cell that is to the Upper of this Cell. 
      * there is a posibility that this direction could be null because is blocked
      */
@@ -332,18 +318,18 @@ public class Cell {
     	
     	return this.upperCell;
     }
-    
-    /*
+
+    /**
      * sets the Cell that is to the Upper of this Cell.
-     * @param UCell. there is a posibility that could be null if the path for this direction is blocked
+     * @param UCell there is a posibility that could be null if the path for this direction is blocked
      */
     
     public void setUpperCell(Cell UCell){
     	
     	this.upperCell = UCell;
     }
-    
-    /*
+
+    /**
      * @return the Cell that is to the Lower of this Cell. 
      * there is a posibility that this direction could be null because is blocked
      */
@@ -351,18 +337,18 @@ public class Cell {
     	
     	return this.lowerCell;
     }
-    
-    /*
+
+    /**
      * sets the Cell that is to the Lower of this Cell.
-     * @param LCell. there is a posibility that could be null if the path for this direction is blocked
+     * @param LCell there is a posibility that could be null if the path for this direction is blocked
      */
     
     public void setLowerCell(Cell LCell){
     	
     	this.lowerCell = LCell;
     }
-    
-    /*
+
+    /**
      * this method returns true if the cells are the same otherwise false
      * @return boolean
      * @param C Cell to compare with the current Cell
@@ -373,8 +359,8 @@ public class Cell {
     	
     	
     }
-    
-    /*
+
+    /**
      * this method calculates the distace between two cells
      * @return double which is the distance between the two cells
      * @param C Cell to calculate the distance with the current Cell
@@ -387,17 +373,17 @@ public class Cell {
     	
     	return result;
     }
-    
-    /*
-     *this method returns a HashCode from the Coordinate Point object 
+
+    /**
+     * this method returns a HashCode from the Coordinate Point object
      * Our Floor class uses this in order to assigned a key to the given cell in the map
      * Returns an Object Integer
      */
     public Integer getCoordinatePointHashCodeKey(){
-    	
-    	Integer result = (Integer) this.point.hashCode();
-    	
-    	return result;
+
+        Integer result = this.point.hashCode();
+
+        return result;
     	
     }
     
