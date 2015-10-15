@@ -19,6 +19,7 @@ public class CoordinatePoint extends Point {
     	int hash = 87 + (7 + this.x);
     	    hash = 87 * (hash + this.y);
     	
-    	    return hash;	
+    	    // it will be unique for 32 bit hashcode we can do some research on this
+    	    return String.valueOf(hash).hashCode();	
     }
 }
