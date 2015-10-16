@@ -5,34 +5,31 @@ import java.util.List;
 /**
  * Created on 10/10/15.
  * Class: HomeLayout.java
- * Author: eric
+ * Author: eric, marlon
  * Assignment: SE459
  */
 public class HomeLayout {
-    private String id;
-    private List<Cell> cells;
+   
+	
+    private List<FloorPlanMap> CollectionOfHomeLayouts;
 
-    public String getId() {
-        return id;
+    
+
+    public List<FloorPlanMap> getCollectionOfHomeLayouts() {
+        return this.CollectionOfHomeLayouts;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setCollectionOfHomeLayouts(List<FloorPlanMap> cells) {
+        this.CollectionOfHomeLayouts = cells;
     }
 
-    public List<Cell> getCells() {
-        return cells;
-    }
-
-    public void setCells(List<Cell> cells) {
-        this.cells = cells;
-    }
-
+    
+    
     @Override
     public String toString() {
         return "HomeLayout{" +
-                "id='" + id + '\'' +
-                ", cells=" + cells +
+    
+                ", Number of Home Layouts=" + this.CollectionOfHomeLayouts.size() +
                 '}';
     }
 }
