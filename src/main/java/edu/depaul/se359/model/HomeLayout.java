@@ -10,26 +10,20 @@ import java.util.List;
  */
 public class HomeLayout {
    
+	private FloorPlanMap homeLayout;
 	
-    private List<FloorPlanMap> CollectionOfHomeLayouts;
-
-    
-
-    public List<FloorPlanMap> getCollectionOfHomeLayouts() {
-        return this.CollectionOfHomeLayouts;
-    }
-
-    public void setCollectionOfHomeLayouts(List<FloorPlanMap> cells) {
-        this.CollectionOfHomeLayouts = cells;
-    }
-
-    
-    
-    @Override
-    public String toString() {
-        return "HomeLayout{" +
-    
-                ", Number of Home Layouts=" + this.CollectionOfHomeLayouts.size() +
-                '}';
-    }
+	public HomeLayout(FloorPlanMap Home){
+		
+		this.homeLayout = Home;
+		
+				
+	}
+	
+	
+	public FloorPlanMap getHomeLayout(){
+		
+		return this.homeLayout;
+	}
+	
+	
 }

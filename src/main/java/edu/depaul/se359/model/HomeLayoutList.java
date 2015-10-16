@@ -9,7 +9,8 @@ import java.util.List;
  * Assignment: SE459
  */
 public class HomeLayoutList {
-    private List<HomeLayout> HomeLayout;
+    
+	private List<HomeLayout> HomeLayout;
 
     public List<HomeLayout> getHomeLayout() {
         return HomeLayout;
@@ -17,6 +18,11 @@ public class HomeLayoutList {
 
     public void setHomeLayout(List<HomeLayout> homeLayout) {
         HomeLayout = homeLayout;
+    }
+    
+    public void addAHomeLayout(HomeLayout home){
+    	
+    	this.HomeLayout.add(home);
     }
 
     @Override
