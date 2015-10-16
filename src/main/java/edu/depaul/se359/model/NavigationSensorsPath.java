@@ -1,5 +1,11 @@
 package edu.depaul.se359.model;
 
+/**
+ * 
+ * @author marlon garcia
+ *
+ */
+
 public final class NavigationSensorsPath {
 
 	private NavigationSensorsPath(){

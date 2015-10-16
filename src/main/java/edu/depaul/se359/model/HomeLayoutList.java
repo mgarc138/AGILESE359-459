@@ -5,7 +5,7 @@ import java.util.List;
 /**
  * Created on 10/10/15.
  * Class: HomeLayoutList.java
- * Author: eric
+ * Author: eric, marlon
  * Assignment: SE459
  */
 public class HomeLayoutList {
