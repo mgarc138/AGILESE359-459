@@ -1,7 +1,7 @@
 package edu.depaul.se359;
 
 
-import edu.depaul.se359.model.HomeLayoutList;
+import edu.depaul.se359.model.HomeLayoutPlanMap;
 import edu.depaul.se359.service.LayoutParser;
 
 import java.io.IOException;
@@ -14,7 +14,7 @@ import java.io.IOException;
  */
 public class Main {
     public static void main(String[] args) throws IOException {
-        HomeLayoutList layouts = LayoutParser.parseHomeLayout("./FloorPlans/FloorPlanLayoutHome1.json");
+        HomeLayoutPlanMap layouts = LayoutParser.parseHomeLayout("./FloorPlans/FloorPlanLayoutHome1.json");
 
         System.out.println(layouts);
     }

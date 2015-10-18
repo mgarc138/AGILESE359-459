@@ -1,6 +1,6 @@
 package edu.depaul.se359.service;
 
-import edu.depaul.se359.model.HomeLayoutList;
+import edu.depaul.se359.model.HomeLayoutPlanMap;
 import org.junit.Test;
 
 import static org.junit.Assert.assertNotNull;
@@ -18,13 +18,13 @@ public class LayoutParserTest {
      */
     @Test
     public void testParseHomeLayout() throws Exception {
-        HomeLayoutList homeLayoutList = LayoutParser.parseHomeLayout("./FloorPlans/FloorPlanLayoutHome1.json");
+        HomeLayoutPlanMap homeLayoutPlanMap = LayoutParser.parseHomeLayout("./FloorPlans/FloorPlanLayoutHome1.json");
 
         // Check if Object is null
-        assertNotNull(homeLayoutList);
-        // Check if child objects are initialized properly
+        assertNotNull(homeLayoutPlanMap);
 
-        assertTrue(!homeLayoutList.getHomeLayout().get(0).getCells().isEmpty());
-        assertTrue(homeLayoutList.getHomeLayout().get(0).getCells().get(0).getPoint().getX() == 0);
+        // Check if child objects are initialized properly
+        assertTrue(!homeLayoutPlanMap.getHomeLayout().get(0).getCells().isEmpty());
+        assertTrue(homeLayoutPlanMap.getFloor("roomA").getId().equals("roomA"));
     }
 }
