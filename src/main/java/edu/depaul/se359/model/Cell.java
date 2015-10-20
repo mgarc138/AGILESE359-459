@@ -1,9 +1,12 @@
 package edu.depaul.se359.model;
 
+import edu.depaul.se359.exception.InvalidFloorCodeException;
+import edu.depaul.se359.exception.NegativeDirtUnitsException;
+
 /**
  * Created on 10/10/15.
  * Class: Cell.java
- * Author: eric, marlon
+ * Author: eric, marlon, andrew
  * Assignment: SE459
  */
 public class Cell {
@@ -21,7 +24,7 @@ public class Cell {
     private Cell upperCell;
     private Cell lowerCell;
 
-    public Cell(int xPosition, int yPosition, int rightPath, int leftPath, int upPath, int downPath, boolean charge, int dirt, int surface) {
+    public Cell(int xPosition, int yPosition, int rightPath, int leftPath, int upPath, int downPath, boolean charge, int dirt, int surface) throws InvalidFloorCodeException, NegativeDirtUnitsException {
 
         point = new CoordinatePoint(xPosition, yPosition);
 
@@ -109,15 +112,15 @@ public class Cell {
      * @param right
      */
     
-    public void setRight(int right) {
+    public void setRight(int right) throws InvalidFloorCodeException {
 
         if (right > 4) {
-
+        	throw new InvalidFloorCodeException("Error: Right floor code too high");
             // exception
         }
 
         if (right < 1) {
-
+        	throw new InvalidFloorCodeException("Error: Right floor code too low");
             // exception
         }
 
@@ -145,15 +148,15 @@ public class Cell {
      * 4. there is a stairs
      * @param left
      */
-    public void setLeft(int left) {
+    public void setLeft(int left) throws InvalidFloorCodeException {
 
         if (left > 4) {
-
+        	throw new InvalidFloorCodeException("Error: Left floor code too high");
             // exception
         }
 
         if (left < 1) {
-
+        	throw new InvalidFloorCodeException("Error: Left floor code too low");
             // exception
         }
 
@@ -180,15 +183,15 @@ public class Cell {
      * 4. there is a stairs
      * @param up
      */
-    public void setUp(int up) {
+    public void setUp(int up) throws InvalidFloorCodeException {
 
         if (up > 4) {
-
+        	throw new InvalidFloorCodeException("Error: Up floor code too high");
             //exception
         }
 
         if (up < 0) {
-
+        	throw new InvalidFloorCodeException("Error: Up floor code too low");
             // exception
         }
 
@@ -215,16 +218,16 @@ public class Cell {
      * 4. there is a stairs
      * @param down
      */
-    public void setDown(int down) {
+    public void setDown(int down) throws InvalidFloorCodeException {
 
 
-        if (up > 4) {
-
+        if (down > 4) {
+        	throw new InvalidFloorCodeException("Error: Down integer too high");
             // exception
         }
 
-        if (up < 0) {
-
+        if (down < 0) {
+        	throw new InvalidFloorCodeException("Error: Down integer too low");
             // exception
         }
 
@@ -261,10 +264,10 @@ public class Cell {
     /**
      * Sets the amount of dirt present in the Cell in (units)
      */
-    public void setDirt(int dirt) {
+    public void setDirt(int dirt) throws NegativeDirtUnitsException {
 
         if (dirt < 0) {
-
+        	throw new NegativeDirtUnitsException("Error: Negative dirt units detected");
             //exception
         }
 
