@@ -2,7 +2,7 @@ package edu.depaul.se359.model;
 import java.util.Map;
 import java.util.HashMap;
 import java.util.List;
-
+import java.util.ArrayList;
 
 
 public class CleanSweep {
@@ -21,7 +21,8 @@ public class CleanSweep {
 		
 		this.DirtAnalizer = new UtilityContainer();
 		HouseMap = new HashMap<Integer, Cell>();
-		
+		this.VisitedCells = new ArrayList<Cell>();
+		this.NotVisitedCells = new ArrayList<Cell>();
 		
 	}
 	
