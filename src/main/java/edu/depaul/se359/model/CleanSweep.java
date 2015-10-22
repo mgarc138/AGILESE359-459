@@ -3,7 +3,7 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.List;
 import java.util.ArrayList;
-
+import java.util.Iterator;
 
 public class CleanSweep {
 	
@@ -13,6 +13,7 @@ public class CleanSweep {
 	private Map<Integer, Cell> HouseMap;
 	private List<Cell> VisitedCells;
 	private List<Cell> NotVisitedCells;
+	
 	
 	public CleanSweep(Cell homeCell){
 		
@@ -44,7 +45,33 @@ public class CleanSweep {
 				
 		}
 		
-		//to continue later
+		//get a list of all the open cells available from the current one
+		
+		List<Cell> openNeighborsCellsList = this.getAllTheAvailableMoves(CurrentCell);
+		
+		// using iterator we are more efficient in the traversing of the data structure so weh we say get next() is O(1) which is more efficient than O(n) regular for loop
+		//Intatiaziation of the iterator 
+		Iterator<Cell> iterator = openNeighborsCellsList.iterator();
+		
+		while(iterator.hasNext()){
+			
+			Cell CellElementNeighbor = iterator.next();
+			
+			if(this.HouseMap.containsValue(CellElementNeighbor)){
+				
+				// The Cell is already in store in our houseMap
+			}
+			
+			else {
+				
+				// we insert the new Cell
+				// we increment the count to add a new Cell
+				CellCount++;
+				this.HouseMap.put(CellCount, CellElementNeighbor);
+				
+			}
+			
+		}
 	
 		return this.HouseMap;
 		
