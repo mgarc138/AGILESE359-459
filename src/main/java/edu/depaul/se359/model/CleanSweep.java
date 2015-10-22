@@ -51,6 +51,36 @@ public class CleanSweep {
 	}
 	
 	
+	public List<Cell> getAllTheAvailableMoves(Cell CurentPositionCell){
+		
+		List<Cell> allAvailableSweepMoves = new ArrayList<Cell>();
+		
+		if(CurentPositionCell.getRight() == 2){
+			
+			allAvailableSweepMoves.add(CurentPositionCell.getRightCell());
+		}
+		
+		if(CurentPositionCell.getLeft() == 2){
+			
+			allAvailableSweepMoves.add(CurentPositionCell.getLeftCell());
+		}
+		
+		if(CurentPositionCell.getUp() == 2){
+			
+			allAvailableSweepMoves.add(CurentPositionCell.getUpperCell());
+		}
+		
+		if(CurentPositionCell.getDown() == 2){
+			allAvailableSweepMoves.add(CurentPositionCell.getLowerCell());
+			
+		}
+		
+		return allAvailableSweepMoves;
+			
+		
+	}
+	
+	
 	
 	
 	
