@@ -108,6 +108,45 @@ public class CleanSweep {
 	}
 	
 	
+	private List<Cell> move(Cell CelldestinationToMove){
+		
+		List<Cell> listOfCellsTraversed = new ArrayList<Cell>();
+		listOfCellsTraversed.add(this.CurrentCell);
+		Cell nextCell;
+		
+		while(!(this.CurrentCell.sameCell(CelldestinationToMove))){
+			
+			// to be implemented block by other feactures yet.
+		}
+		
+		return listOfCellsTraversed;
+		
+	}
+	
+	
+	// keeps track of the not visited cells
+	public void SetNotVistedNeighborsCellsList(){
+		
+		List<Cell> NeighborsCellsList = new ArrayList<Cell>();
+		NeighborsCellsList = getAllTheAvailableMoves(this.CurrentCell);
+		NeighborsCellsList.removeAll(VisitedCells);
+		NeighborsCellsList.removeAll(NotVisitedCells);
+		
+		Iterator<Cell> iterator = NeighborsCellsList.iterator();
+		while (iterator.hasNext()){
+			
+			Cell UnvisitedCell = iterator.next();
+			
+			this.NotVisitedCells.add(UnvisitedCell);
+		}
+		
+		
+	}
+	
+	
+	
+	
+	
 	
 	
 	
