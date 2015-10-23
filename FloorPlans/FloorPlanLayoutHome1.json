@@ -14,7 +14,8 @@
           "up": 1,
           "down": 2,
           "charge": true,
-          "dirt": 1
+          "dirt": 1,
+          "visited": 0
         },
         {
           "point": {
@@ -27,7 +28,8 @@
           "up": 1,
           "down": 2,
           "charge": false,
-          "dirt": 1
+          "dirt": 1,
+          "visited": 0
         },
         {
           "point": {
@@ -40,7 +42,8 @@
           "up": 1,
           "down": 2,
           "charge": false,
-          "dirt": 1
+          "dirt": 1,
+          "visited": 0
         },
         {
           "point": {
@@ -53,7 +56,8 @@
           "up": 1,
           "down": 2,
           "charge": false,
-          "dirt": 1
+          "dirt": 1,
+          "visited": 0
         },
         {
           "point": {
@@ -66,7 +70,8 @@
           "up": 1,
           "down": 1,
           "charge": false,
-          "dirt": 1
+          "dirt": 1,
+          "visited": 0
         },
         {
           "point": {
@@ -79,7 +84,8 @@
           "up": 1,
           "down": 1,
           "charge": false,
-          "dirt": 1
+          "dirt": 1,
+          "visited": 0
         },
         {
           "point": {
@@ -92,7 +98,8 @@
           "up": 1,
           "down": 1,
           "charge": false,
-          "dirt": 1
+          "dirt": 1,
+          "visited": 0
         },
         {
           "point": {
@@ -105,7 +112,8 @@
           "up": 1,
           "down": 1,
           "charge": false,
-          "dirt": 1
+          "dirt": 1,
+          "visited": 0
         },
         {
           "point": {
@@ -118,7 +126,8 @@
           "up": 1,
           "down": 1,
           "charge": false,
-          "dirt": 1
+          "dirt": 1,
+          "visited": 0
         },
         {
           "point": {
@@ -131,7 +140,8 @@
           "up": 1,
           "down": 1,
           "charge": false,
-          "dirt": 1
+          "dirt": 1,
+          "visited": 0
         },
         {
           "point": {
@@ -144,7 +154,8 @@
           "up": 1,
           "down": 1,
           "charge": false,
-          "dirt": 1
+          "dirt": 1,
+          "visited": 0
         },
         {
           "point": {
@@ -157,7 +168,8 @@
           "up": 1,
           "down": 1,
           "charge": false,
-          "dirt": 1
+          "dirt": 1,
+          "visited": 0
         },
         {
           "point": {
@@ -170,7 +182,8 @@
           "up": 1,
           "down": 1,
           "charge": false,
-          "dirt": 1
+          "dirt": 1,
+          "visited": 0
         },
         {
           "point": {
@@ -183,7 +196,8 @@
           "up": 1,
           "down": 1,
           "charge": false,
-          "dirt": 1
+          "dirt": 1,
+          "visited": 0
         },
         {
           "point": {
@@ -196,7 +210,8 @@
           "up": 1,
           "down": 1,
           "charge": false,
-          "dirt": 1
+          "dirt": 1,
+          "visited": 0
         },
         {
           "point": {
@@ -209,7 +224,8 @@
           "up": 1,
           "down": 1,
           "charge": false,
-          "dirt": 1
+          "dirt": 1,
+          "visited": 0
         },
         {
           "point": {
@@ -222,7 +238,8 @@
           "up": 2,
           "down": 1,
           "charge": false,
-          "dirt": 1
+          "dirt": 1,
+          "visited": 0
         },
         {
           "point": {
@@ -235,7 +252,8 @@
           "up": 2,
           "down": 1,
           "charge": false,
-          "dirt": 1
+          "dirt": 1,
+          "visited": 0
         },
         {
           "point": {
@@ -248,7 +266,8 @@
           "up": 2,
           "down": 1,
           "charge": false,
-          "dirt": 1
+          "dirt": 1,
+          "visited": 0
         },
         {
           "point": {
@@ -261,7 +280,8 @@
           "up": 2,
           "down": 1,
           "charge": false,
-          "dirt": 1
+          "dirt": 1,
+          "visited": 0
         }
       ]
     },
@@ -279,7 +299,8 @@
           "up": 1,
           "down": 4,
           "charge": false,
-          "dirt": 2
+          "dirt": 2,
+          "visited": 0
         },
         {
           "point": {
@@ -292,7 +313,8 @@
           "up": 1,
           "down": 2,
           "charge": false,
-          "dirt": 1
+          "dirt": 1,
+          "visited": 0
         },
         {
           "point": {
@@ -305,7 +327,8 @@
           "up": 1,
           "down": 1,
           "charge": false,
-          "dirt": 2
+          "dirt": 2,
+          "visited": 0
         },
         {
           "point": {
@@ -318,7 +341,8 @@
           "up": 1,
           "down": 1,
           "charge": false,
-          "dirt": 1
+          "dirt": 1,
+          "visited": 0
         },
         {
           "point": {
@@ -331,7 +355,8 @@
           "up": 1,
           "down": 1,
           "charge": false,
-          "dirt": 2
+          "dirt": 2,
+          "visited": 0
         },
         {
           "point": {
@@ -344,7 +369,8 @@
           "up": 1,
           "down": 1,
           "charge": false,
-          "dirt": 1
+          "dirt": 1,
+          "visited": 0
         },
         {
           "point": {
@@ -357,7 +383,8 @@
           "up": 1,
           "down": 1,
           "charge": false,
-          "dirt": 1
+          "dirt": 1,
+          "visited": 0
         },
         {
           "point": {
@@ -370,7 +397,8 @@
           "up": 1,
           "down": 1,
           "charge": false,
-          "dirt": 1
+          "dirt": 1,
+          "visited": 0
         },
         {
           "point": {
@@ -383,7 +411,8 @@
           "up": 1,
           "down": 1,
           "charge": false,
-          "dirt": 2
+          "dirt": 2,
+          "visited": 0
         },
         {
           "point": {
@@ -396,7 +425,8 @@
           "up": 1,
           "down": 1,
           "charge": false,
-          "dirt": 1
+          "dirt": 1,
+          "visited": 0
         },
         {
           "point": {
@@ -409,7 +439,8 @@
           "up": 1,
           "down": 1,
           "charge": false,
-          "dirt": 2
+          "dirt": 2,
+          "visited": 0
         },
         {
           "point": {
@@ -422,7 +453,8 @@
           "up": 1,
           "down": 1,
           "charge": false,
-          "dirt": 2
+          "dirt": 2,
+          "visited": 0
         },
         {
           "point": {
@@ -435,7 +467,8 @@
           "up": 1,
           "down": 1,
           "charge": false,
-          "dirt": 2
+          "dirt": 2,
+          "visited": 0
         },
         {
           "point": {
@@ -448,7 +481,8 @@
           "up": 1,
           "down": 1,
           "charge": false,
-          "dirt": 1
+          "dirt": 1,
+          "visited": 0
         },
         {
           "point": {
@@ -461,7 +495,8 @@
           "up": 2,
           "down": 1,
           "charge": false,
-          "dirt": 1
+          "dirt": 1,
+          "visited": 0
         },
         {
           "point": {
@@ -474,7 +509,8 @@
           "up": 2,
           "down": 1,
           "charge": false,
-          "dirt": 3
+          "dirt": 3,
+          "visited": 0
         }
       ]
     },
@@ -492,7 +528,8 @@
           "up": 1,
           "down": 2,
           "charge": false,
-          "dirt": 1
+          "dirt": 1,
+          "visited": 0
         },
         {
           "point": {
@@ -505,7 +542,8 @@
           "up": 1,
           "down": 2,
           "charge": false,
-          "dirt": 1
+          "dirt": 1,
+          "visited": 0
         },
         {
           "point": {
@@ -518,7 +556,8 @@
           "up": 1,
           "down": 2,
           "charge": false,
-          "dirt": 1
+          "dirt": 1,
+          "visited": 0
         },
         {
           "point": {
@@ -531,7 +570,8 @@
           "up": 1,
           "down": 2,
           "charge": false,
-          "dirt": 1
+          "dirt": 1,
+          "visited": 0
         },
         {
           "point": {
@@ -544,7 +584,8 @@
           "up": 1,
           "down": 1,
           "charge": false,
-          "dirt": 1
+          "dirt": 1,
+          "visited": 0
         },
         {
           "point": {
@@ -557,7 +598,8 @@
           "up": 1,
           "down": 1,
           "charge": false,
-          "dirt": 1
+          "dirt": 1,
+          "visited": 0
         },
         {
           "point": {
@@ -570,7 +612,8 @@
           "up": 1,
           "down": 1,
           "charge": false,
-          "dirt": 1
+          "dirt": 1,
+          "visited": 0
         },
         {
           "point": {
@@ -583,7 +626,8 @@
           "up": 1,
           "down": 1,
           "charge": false,
-          "dirt": 1
+          "dirt": 1,
+          "visited": 0
         },
         {
           "point": {
@@ -596,7 +640,8 @@
           "up": 2,
           "down": 1,
           "charge": false,
-          "dirt": 1
+          "dirt": 1,
+          "visited": 0
         },
         {
           "point": {
@@ -609,7 +654,8 @@
           "up": 2,
           "down": 1,
           "charge": false,
-          "dirt": 1
+          "dirt": 1,
+          "visited": 0
         },
         {
           "point": {
@@ -622,7 +668,8 @@
           "up": 2,
           "down": 1,
           "charge": false,
-          "dirt": 1
+          "dirt": 1,
+          "visited": 0
         },
         {
           "point": {
@@ -635,7 +682,8 @@
           "up": 2,
           "down": 1,
           "charge": false,
-          "dirt": 1
+          "dirt": 1,
+          "visited": 0
         }
       ]
     }
