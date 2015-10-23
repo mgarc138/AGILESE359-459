@@ -13,7 +13,7 @@ public class DirtDetector {
      * @param cell
      * @return boolean
      */
-    public boolean isDirty(Cell cell) {
+    public static boolean isDirty(Cell cell) {
         return cell.getDirt() > 0;
     }
 }
