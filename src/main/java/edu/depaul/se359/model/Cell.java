@@ -276,7 +276,7 @@ public class Cell {
 
     /**
      * @return the Cell that is to the right of this Cell. 
-     * there is a posibility that this direction could be null because is blocked
+     * there is a possibility that this direction could be null because is blocked
      */
     public Cell getRightCell(){
     	

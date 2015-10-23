@@ -8,7 +8,7 @@ public class UtilityContainer {
 	
 	public UtilityContainer(){
 		
-		// when the container is been istatiated in the object it means that 
+		// when the container is been instantiated in the object it means that 
 		// that the sweep contains a clean container bag
 		emptyMeBag();
 		setEmptyMeLight(false);	

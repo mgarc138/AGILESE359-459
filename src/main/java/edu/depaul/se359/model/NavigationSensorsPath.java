@@ -1,5 +1,9 @@
 package edu.depaul.se359.model;
 
+import java.util.List;
+
+import edu.depaul.se359.exception.NoPossibleMovesException;
+
 /**
  * 
  * @author marlon garcia
@@ -147,7 +151,7 @@ public final class NavigationSensorsPath {
 	}
 	
 	
-	
+
 	
 	
 	
@@ -223,7 +227,27 @@ public static boolean stairsDown(Cell currentCell){
 	
 	
 	
+@SuppressWarnings("null")
+public static List<Cell> openCells(Cell currentCell) throws NoPossibleMovesException{
+	List<Cell> possibleMoves = null;
+	if (!(obstacleUp(currentCell)) && !(stairsUp(currentCell))){
+		possibleMoves.add(currentCell.getUpperCell());
+	}
+	if (!(obstacleDown(currentCell)) && !(stairsDown(currentCell))){
+		possibleMoves.add(currentCell.getLowerCell());
+	}
+	if (!(obstacleLeft(currentCell)) && !(stairsLeft(currentCell))){
+		possibleMoves.add(currentCell.getLeftCell());
+	}
+	if (!(obstacleRight(currentCell)) && !(stairsRight(currentCell))){
+		possibleMoves.add(currentCell.getRightCell());
+	}
+	if (possibleMoves == null){
+		throw new NoPossibleMovesException("Error: Clean sweep has no possible moves");
+	}
+	return possibleMoves;
 	
+}
 	
 	
 	
