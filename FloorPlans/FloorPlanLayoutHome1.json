@@ -2,6 +2,7 @@
   "HomeLayout": [
     {
       "id": "roomA",
+      "level": 1,
       "cells": [
         {
           "point": {

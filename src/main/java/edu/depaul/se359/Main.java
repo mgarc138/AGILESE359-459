@@ -17,5 +17,11 @@ public class Main {
         HomeLayoutPlanMap layouts = LayoutParser.parseHomeLayout("./FloorPlans/FloorPlanLayoutHome1.json");
 
         System.out.println(layouts);
+        
+        
+        
+        
+        
+        
     }
 }
