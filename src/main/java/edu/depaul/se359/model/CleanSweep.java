@@ -24,6 +24,12 @@ public class CleanSweep {
 
     }
 
+    public Map<Integer, Cell> cleanHome() {
+        VisitedCells.add(CurrentCell);
+
+        return null;
+    }
+
     public Map<Integer, Cell> addingCellsToHouseMap(Map<Integer, Cell> houseMap) {
 
         Integer CellCount = this.HouseMap.size();
