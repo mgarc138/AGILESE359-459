@@ -2,36 +2,39 @@ package edu.depaul.se359.model;
 
 import edu.depaul.se359.exception.InvalidFloorCodeException;
 import edu.depaul.se359.exception.InvalidRoomCodeException;
+import edu.depaul.se359.exception.NegativeDirtUnitsException;
 import javafx.scene.layout.GridPane;
 
 import java.util.*;
 import java.util.logging.Level;
 
-public class CleanSweep {
+public class CleanSweep extends Observable implements Runnable {
 
     public GridPane grid;
     private Cell CurrentCell;
     private Cell HomeCell;
     private UtilityContainer DirtAnalizer;
-    private Map<Integer, Cell> HouseMap;
+    // private Map<Integer, Cell> HouseMap;
     private List<Cell> VisitedCells;
     private List<Cell> NotVisitedCells;
+    private HomeLayout HouseMap;
 
 
-    public CleanSweep(Cell homeCell) {
+    public CleanSweep(Cell homeCell, HomeLayout houseMap) {
 
         this.HomeCell = homeCell;
         this.CurrentCell = homeCell;
 
         this.DirtAnalizer = new UtilityContainer();
-        HouseMap = new HashMap<Integer, Cell>();
+        //HouseMap = new HashMap<Integer, Cell>();
         this.VisitedCells = new ArrayList<Cell>();
         this.NotVisitedCells = new ArrayList<Cell>();
+        HouseMap = houseMap;
     }
 
-    public Map<Integer, Cell> cleanHome(HomeLayout HouseMap) throws InvalidFloorCodeException, InvalidRoomCodeException {
-        
-    	int counter = 0;
+    public Map<Integer, Cell> cleanHome() throws InvalidFloorCodeException, InvalidRoomCodeException {
+
+        int counter = 0;
         HashMap<Integer, Cell> houseCells = new HashMap<Integer, Cell>();
 
         // iterate through each floor
@@ -40,6 +43,20 @@ public class CleanSweep {
 
             for (Room room : floor.getRooms()) {
                 for (Cell cell : room.getCells()) {
+                    CurrentCell = cell;
+
+                    try {
+                        Thread.sleep(500);
+                        cell.setDirt(0);
+
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    } catch (NegativeDirtUnitsException e) {
+                        e.printStackTrace();
+                    }
+
+                    setChanged();
+                    notifyObservers();
                     counter++;
     			}
     		}
@@ -48,11 +65,16 @@ public class CleanSweep {
         // System.out.println("Grid: " + map);
 
         LogFile.getInstance().writeLogFile(Level.INFO, "House Cells: " + houseCells.toString());
+        Thread.currentThread().interrupt();
 
         return null;
     }
 
-    public Map<Integer, Cell> addingCellsToHouseMap(Map<Integer, Cell> houseMap) {
+    public Cell getCurrentPosition() {
+        return CurrentCell;
+    }
+
+    /*public Map<Integer, Cell> addingCellsToHouseMap(Map<Integer, Cell> houseMap) {
 
         Integer CellCount = this.HouseMap.size();
         LogFile.getInstance().writeLogFile(Level.INFO, CellCount.toString());
@@ -97,7 +119,7 @@ public class CleanSweep {
         }
 
         return this.HouseMap;
-    }
+    }*/
 
     public List<Cell> getAllTheAvailableMoves(Cell CurentPositionCell) {
 
@@ -137,6 +159,17 @@ public class CleanSweep {
             Cell UnvisitedCell = iterator.next();
 
             this.NotVisitedCells.add(UnvisitedCell);
+        }
+    }
+
+    public void run() {
+
+        try {
+            cleanHome();
+        } catch (InvalidFloorCodeException e) {
+            e.printStackTrace();
+        } catch (InvalidRoomCodeException e) {
+            e.printStackTrace();
         }
     }
 }

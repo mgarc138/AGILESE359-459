@@ -1,11 +1,10 @@
 package edu.depaul.se359;
 
-import edu.depaul.se359.exception.InvalidFloorCodeException;
-import edu.depaul.se359.exception.InvalidRoomCodeException;
 import edu.depaul.se359.model.*;
 import edu.depaul.se359.sensor.DirtDetector;
 import edu.depaul.se359.service.LayoutParser;
 import javafx.application.Application;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
@@ -15,14 +14,18 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.FileNotFoundException;
+import java.util.Observable;
+import java.util.Observer;
 import java.util.logging.Level;
 
 /**
  * Created by eric on 10/30/15.
  */
-public class Simulation extends Application {
+public class Simulation extends Application implements Observer {
     Scene scene;
     GridPane gridPane;
+    CleanSweep cleanSweep;
+    HomeLayoutPlanMap layouts;
 
     public static void main(String[] args) {
         launch(args);
@@ -33,7 +36,7 @@ public class Simulation extends Application {
         gridPane = new GridPane();
 
         try {
-            HomeLayoutPlanMap layouts = LayoutParser.parseHomeLayout("./FloorPlans/FloorPlanLayoutHome2.json");
+            layouts = LayoutParser.parseHomeLayout("./FloorPlans/FloorPlanLayoutHome2.json");
             Cell chargeStation = null;
             // Get the charge station
             for (Floor floor : layouts.getHomeLayout().getFloors()) {
@@ -44,20 +47,17 @@ public class Simulation extends Application {
                             LogFile.getInstance().writeLogFile(Level.INFO, "Charge station was found!");
                         }
 
+                        // add the cells to the GUI
                         gridPane.add(new MyNode(cell), cell.getX(), cell.getY());
                     }
                 }
             }
 
 
-            CleanSweep cleanSweep = new CleanSweep(chargeStation);
-            cleanSweep.cleanHome(layouts.getHomeLayout());
+            cleanSweep = new CleanSweep(chargeStation, layouts.getHomeLayout());
+            cleanSweep.addObserver(this);
 
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (InvalidFloorCodeException e) {
-            e.printStackTrace();
-        } catch (InvalidRoomCodeException e) {
             e.printStackTrace();
         }
     }
@@ -69,14 +69,41 @@ public class Simulation extends Application {
         stage.setScene(scene);
 
         stage.show();
+
+        Thread thread = new Thread(cleanSweep);
+        thread.start();
+    }
+
+    public void update(Observable observable, Object o) {
+        CleanSweep cs = (CleanSweep) observable;
+        System.out.println(cs.getCurrentPosition().getPoint());
+
+        for (Node node : gridPane.getChildren()) {
+            if (GridPane.getColumnIndex(node) == cs.getCurrentPosition().getX() && GridPane.getRowIndex(node) == cs.getCurrentPosition().getY()) {
+                // DO Not Clean charging station
+                if (cs.getCurrentPosition().CheckisaChargingStation()) {
+                    return;
+                }
+
+                // If cell was cleaned, draw the changes
+                if (!DirtDetector.isDirty(cs.getCurrentPosition())) {
+                    ((MyNode) node).setClean();
+                }
+                try {
+                    Thread.sleep(50);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                // gridPane.add(node, cs.getCurrentPosition().getX(), cs.getCurrentPosition().getY());
+            }
+        }
     }
 
     class MyNode extends StackPane {
         private Rectangle rectangle = new Rectangle();
-        private Text text;
+        private Text text = new Text();
 
         public MyNode(Cell cell) {
-            text = new Text();
 
             rectangle.setWidth(48);
             rectangle.setHeight(48);
@@ -105,6 +132,16 @@ public class Simulation extends Application {
             }
 
             getChildren().addAll(rectangle, text);
+        }
+
+        public void setText(String text) {
+            this.text.setText(text);
+        }
+
+        public void setClean() {
+            rectangle.setFill(Color.YELLOW);
+            text.setText("0");
+            text.setStroke(Color.BLACK);
         }
     }
 }
