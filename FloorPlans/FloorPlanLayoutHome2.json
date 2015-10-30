@@ -6,6 +6,8 @@
         "rooms": [
           {
             "id": "roomA",
+            "width": 4,
+            "height": 5,
             "cells": [
               {
                 "point": {
@@ -18,7 +20,7 @@
                 "up": 1,
                 "down": 2,
                 "charge": true,
-                "dirt": 1
+                "dirt": 0
               },
               {
                 "point": {
@@ -271,6 +273,8 @@
           },
           {
             "id": "hallway",
+            "width": 6,
+            "height": 8,
             "cells": [
               {
                 "point": {
@@ -484,6 +488,8 @@
           },
           {
             "id": "roomB",
+            "width": 4,
+            "height": 3,
             "cells": [
               {
                 "point": {

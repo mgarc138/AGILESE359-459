@@ -56,7 +56,6 @@ public class Battery {
     public void setDecrementBatteryLevel(Cell cellA, Cell cellB) {
 
         this.CurrentBatteryLevel = this.CurrentBatteryLevel - calculateWeightUnits(cellA, cellB);
-
     }
 
     public double getShortestDirectionWeight() {

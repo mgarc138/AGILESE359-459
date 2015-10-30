@@ -2,11 +2,14 @@ package edu.depaul.se359.model;
 
 import edu.depaul.se359.exception.InvalidFloorCodeException;
 import edu.depaul.se359.exception.InvalidRoomCodeException;
+import javafx.scene.layout.GridPane;
 
 import java.util.*;
+import java.util.logging.Level;
 
 public class CleanSweep {
 
+    public GridPane grid;
     private Cell CurrentCell;
     private Cell HomeCell;
     private UtilityContainer DirtAnalizer;
@@ -24,25 +27,27 @@ public class CleanSweep {
         HouseMap = new HashMap<Integer, Cell>();
         this.VisitedCells = new ArrayList<Cell>();
         this.NotVisitedCells = new ArrayList<Cell>();
-
     }
 
     public Map<Integer, Cell> cleanHome(HomeLayout HouseMap) throws InvalidFloorCodeException, InvalidRoomCodeException {
         
     	int counter = 0;
+        HashMap<Integer, Cell> houseCells = new HashMap<Integer, Cell>();
 
         // iterate through each floor
         for (Floor floor : HouseMap.getFloors()) {
             // iterate through each room
-            for (Room room : floor.getRooms()) {
 
+            for (Room room : floor.getRooms()) {
                 for (Cell cell : room.getCells()) {
                     counter++;
-    				
     			}
-    			
     		}
     	}
+
+        // System.out.println("Grid: " + map);
+
+        LogFile.getInstance().writeLogFile(Level.INFO, "House Cells: " + houseCells.toString());
 
         return null;
     }
@@ -50,6 +55,7 @@ public class CleanSweep {
     public Map<Integer, Cell> addingCellsToHouseMap(Map<Integer, Cell> houseMap) {
 
         Integer CellCount = this.HouseMap.size();
+        LogFile.getInstance().writeLogFile(Level.INFO, CellCount.toString());
 
         if (this.HouseMap.containsValue(this.CurrentCell)) {
 
@@ -66,6 +72,7 @@ public class CleanSweep {
         //get a list of all the open cells available from the current one
 
         List<Cell> openNeighborsCellsList = this.getAllTheAvailableMoves(CurrentCell);
+        LogFile.getInstance().writeLogFile(Level.INFO, "Available Moves: " + openNeighborsCellsList.toString());
 
         // using iterator we are more efficient in the traversing of the data structure so weh we say get next() is O(1) which is more efficient than O(n) regular for loop
         //Intatiaziation of the iterator
@@ -96,25 +103,7 @@ public class CleanSweep {
 
         List<Cell> allAvailableSweepMoves = new ArrayList<Cell>();
 
-        if (CurentPositionCell.getRight() == 2) {
-
-            allAvailableSweepMoves.add(CurentPositionCell.getRightCell());
-        }
-
-        if (CurentPositionCell.getLeft() == 2) {
-
-            allAvailableSweepMoves.add(CurentPositionCell.getLeftCell());
-        }
-
-        if (CurentPositionCell.getUp() == 2) {
-
-            allAvailableSweepMoves.add(CurentPositionCell.getUpperCell());
-        }
-
-        if (CurentPositionCell.getDown() == 2) {
-            allAvailableSweepMoves.add(CurentPositionCell.getLowerCell());
-
-        }
+        LogFile.getInstance().writeLogFile(Level.INFO, allAvailableSweepMoves.toString());
 
         return allAvailableSweepMoves;
     }
