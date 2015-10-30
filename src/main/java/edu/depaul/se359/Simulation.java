@@ -76,7 +76,7 @@ public class Simulation extends Application implements Observer {
 
     public void update(Observable observable, Object o) {
         CleanSweep cs = (CleanSweep) observable;
-        System.out.println(cs.getCurrentPosition().getPoint());
+        LogFile.getInstance().writeLogFile(Level.INFO, cs.getCurrentPosition().getPoint().toString());
 
         for (Node node : gridPane.getChildren()) {
             if (GridPane.getColumnIndex(node) == cs.getCurrentPosition().getX() && GridPane.getRowIndex(node) == cs.getCurrentPosition().getY()) {
