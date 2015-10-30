@@ -20,9 +20,8 @@ public class LogFile {
         Logger.getLogger("LogFile").log(logLevel, report);
 
         // append to file
-        FileWriter fw = null;
         try {
-            fw = new FileWriter("Report/report.log", true);
+            FileWriter fw = new FileWriter("Report/report.log", true);
             fw.write("[" + logLevel + "] " + report + "\n");
             fw.close();
 
