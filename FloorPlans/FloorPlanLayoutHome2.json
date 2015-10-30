@@ -1,0 +1,650 @@
+{
+  "HomeLayout": {
+    "floors": [
+      {
+        "id": 1,
+        "rooms": [
+          {
+            "id": "roomA",
+            "cells": [
+              {
+                "point": {
+                  "x": 0,
+                  "y": 0
+                },
+                "surface": 1,
+                "right": 1,
+                "left": 2,
+                "up": 1,
+                "down": 2,
+                "charge": true,
+                "dirt": 1
+              },
+              {
+                "point": {
+                  "x": 1,
+                  "y": 0
+                },
+                "surface": 1,
+                "right": 1,
+                "left": 1,
+                "up": 1,
+                "down": 2,
+                "charge": false,
+                "dirt": 1
+              },
+              {
+                "point": {
+                  "x": 2,
+                  "y": 0
+                },
+                "surface": 1,
+                "right": 1,
+                "left": 1,
+                "up": 1,
+                "down": 2,
+                "charge": false,
+                "dirt": 1
+              },
+              {
+                "point": {
+                  "x": 3,
+                  "y": 0
+                },
+                "surface": 1,
+                "right": 2,
+                "left": 1,
+                "up": 1,
+                "down": 2,
+                "charge": false,
+                "dirt": 1
+              },
+              {
+                "point": {
+                  "x": 0,
+                  "y": 1
+                },
+                "surface": 1,
+                "right": 1,
+                "left": 2,
+                "up": 1,
+                "down": 1,
+                "charge": false,
+                "dirt": 1
+              },
+              {
+                "point": {
+                  "x": 1,
+                  "y": 1
+                },
+                "surface": 1,
+                "right": 1,
+                "left": 1,
+                "up": 1,
+                "down": 1,
+                "charge": false,
+                "dirt": 1
+              },
+              {
+                "point": {
+                  "x": 2,
+                  "y": 1
+                },
+                "surface": 1,
+                "right": 1,
+                "left": 1,
+                "up": 1,
+                "down": 1,
+                "charge": false,
+                "dirt": 1
+              },
+              {
+                "point": {
+                  "x": 3,
+                  "y": 1
+                },
+                "surface": 1,
+                "right": 2,
+                "left": 1,
+                "up": 1,
+                "down": 1,
+                "charge": false,
+                "dirt": 1
+              },
+              {
+                "point": {
+                  "x": 0,
+                  "y": 2
+                },
+                "surface": 1,
+                "right": 1,
+                "left": 2,
+                "up": 1,
+                "down": 1,
+                "charge": false,
+                "dirt": 1
+              },
+              {
+                "point": {
+                  "x": 1,
+                  "y": 2
+                },
+                "surface": 1,
+                "right": 1,
+                "left": 1,
+                "up": 1,
+                "down": 1,
+                "charge": false,
+                "dirt": 1
+              },
+              {
+                "point": {
+                  "x": 2,
+                  "y": 2
+                },
+                "surface": 1,
+                "right": 1,
+                "left": 1,
+                "up": 1,
+                "down": 1,
+                "charge": false,
+                "dirt": 1
+              },
+              {
+                "point": {
+                  "x": 3,
+                  "y": 2
+                },
+                "surface": 1,
+                "right": 2,
+                "left": 1,
+                "up": 1,
+                "down": 1,
+                "charge": false,
+                "dirt": 1
+              },
+              {
+                "point": {
+                  "x": 0,
+                  "y": 3
+                },
+                "surface": 1,
+                "right": 1,
+                "left": 2,
+                "up": 1,
+                "down": 1,
+                "charge": false,
+                "dirt": 1
+              },
+              {
+                "point": {
+                  "x": 1,
+                  "y": 3
+                },
+                "surface": 1,
+                "right": 1,
+                "left": 1,
+                "up": 1,
+                "down": 1,
+                "charge": false,
+                "dirt": 1
+              },
+              {
+                "point": {
+                  "x": 2,
+                  "y": 3
+                },
+                "surface": 1,
+                "right": 1,
+                "left": 1,
+                "up": 1,
+                "down": 1,
+                "charge": false,
+                "dirt": 1
+              },
+              {
+                "point": {
+                  "x": 3,
+                  "y": 3
+                },
+                "surface": 1,
+                "right": 1,
+                "left": 1,
+                "up": 1,
+                "down": 1,
+                "charge": false,
+                "dirt": 1
+              },
+              {
+                "point": {
+                  "x": 0,
+                  "y": 4
+                },
+                "surface": 1,
+                "right": 1,
+                "left": 2,
+                "up": 2,
+                "down": 1,
+                "charge": false,
+                "dirt": 1
+              },
+              {
+                "point": {
+                  "x": 1,
+                  "y": 4
+                },
+                "surface": 1,
+                "right": 1,
+                "left": 1,
+                "up": 2,
+                "down": 1,
+                "charge": false,
+                "dirt": 1
+              },
+              {
+                "point": {
+                  "x": 2,
+                  "y": 4
+                },
+                "surface": 1,
+                "right": 1,
+                "left": 1,
+                "up": 2,
+                "down": 1,
+                "charge": false,
+                "dirt": 1
+              },
+              {
+                "point": {
+                  "x": 3,
+                  "y": 4
+                },
+                "surface": 1,
+                "right": 2,
+                "left": 1,
+                "up": 2,
+                "down": 1,
+                "charge": false,
+                "dirt": 1
+              }
+            ]
+          },
+          {
+            "id": "hallway",
+            "cells": [
+              {
+                "point": {
+                  "x": 4,
+                  "y": 0
+                },
+                "surface": 3,
+                "right": 1,
+                "left": 2,
+                "up": 1,
+                "down": 4,
+                "charge": false,
+                "dirt": 2
+              },
+              {
+                "point": {
+                  "x": 5,
+                  "y": 0
+                },
+                "surface": 3,
+                "right": 2,
+                "left": 1,
+                "up": 1,
+                "down": 2,
+                "charge": false,
+                "dirt": 1
+              },
+              {
+                "point": {
+                  "x": 4,
+                  "y": 1
+                },
+                "surface": 3,
+                "right": 1,
+                "left": 2,
+                "up": 1,
+                "down": 1,
+                "charge": false,
+                "dirt": 2
+              },
+              {
+                "point": {
+                  "x": 5,
+                  "y": 1
+                },
+                "surface": 3,
+                "right": 2,
+                "left": 1,
+                "up": 1,
+                "down": 1,
+                "charge": false,
+                "dirt": 1
+              },
+              {
+                "point": {
+                  "x": 4,
+                  "y": 2
+                },
+                "surface": 3,
+                "right": 1,
+                "left": 2,
+                "up": 1,
+                "down": 1,
+                "charge": false,
+                "dirt": 2
+              },
+              {
+                "point": {
+                  "x": 5,
+                  "y": 2
+                },
+                "surface": 3,
+                "right": 2,
+                "left": 1,
+                "up": 1,
+                "down": 1,
+                "charge": false,
+                "dirt": 1
+              },
+              {
+                "point": {
+                  "x": 4,
+                  "y": 3
+                },
+                "surface": 3,
+                "right": 1,
+                "left": 1,
+                "up": 1,
+                "down": 1,
+                "charge": false,
+                "dirt": 1
+              },
+              {
+                "point": {
+                  "x": 5,
+                  "y": 3
+                },
+                "surface": 3,
+                "right": 2,
+                "left": 1,
+                "up": 1,
+                "down": 1,
+                "charge": false,
+                "dirt": 1
+              },
+              {
+                "point": {
+                  "x": 4,
+                  "y": 4
+                },
+                "surface": 3,
+                "right": 1,
+                "left": 2,
+                "up": 1,
+                "down": 1,
+                "charge": false,
+                "dirt": 2
+              },
+              {
+                "point": {
+                  "x": 5,
+                  "y": 4
+                },
+                "surface": 3,
+                "right": 2,
+                "left": 1,
+                "up": 1,
+                "down": 1,
+                "charge": false,
+                "dirt": 1
+              },
+              {
+                "point": {
+                  "x": 4,
+                  "y": 5
+                },
+                "surface": 3,
+                "right": 1,
+                "left": 2,
+                "up": 1,
+                "down": 1,
+                "charge": false,
+                "dirt": 2
+              },
+              {
+                "point": {
+                  "x": 5,
+                  "y": 5
+                },
+                "surface": 3,
+                "right": 2,
+                "left": 1,
+                "up": 1,
+                "down": 1,
+                "charge": false,
+                "dirt": 2
+              },
+              {
+                "point": {
+                  "x": 4,
+                  "y": 6
+                },
+                "surface": 3,
+                "right": 1,
+                "left": 2,
+                "up": 1,
+                "down": 1,
+                "charge": false,
+                "dirt": 2
+              },
+              {
+                "point": {
+                  "x": 5,
+                  "y": 6
+                },
+                "surface": 3,
+                "right": 2,
+                "left": 1,
+                "up": 1,
+                "down": 1,
+                "charge": false,
+                "dirt": 1
+              },
+              {
+                "point": {
+                  "x": 4,
+                  "y": 7
+                },
+                "surface": 3,
+                "right": 1,
+                "left": 1,
+                "up": 2,
+                "down": 1,
+                "charge": false,
+                "dirt": 1
+              },
+              {
+                "point": {
+                  "x": 5,
+                  "y": 7
+                },
+                "surface": 3,
+                "right": 1,
+                "left": 1,
+                "up": 2,
+                "down": 1,
+                "charge": false,
+                "dirt": 3
+              }
+            ]
+          },
+          {
+            "id": "roomB",
+            "cells": [
+              {
+                "point": {
+                  "x": 0,
+                  "y": 7
+                },
+                "surface": 2,
+                "right": 1,
+                "left": 2,
+                "up": 1,
+                "down": 2,
+                "charge": false,
+                "dirt": 1
+              },
+              {
+                "point": {
+                  "x": 1,
+                  "y": 7
+                },
+                "surface": 2,
+                "right": 1,
+                "left": 1,
+                "up": 1,
+                "down": 2,
+                "charge": false,
+                "dirt": 1
+              },
+              {
+                "point": {
+                  "x": 2,
+                  "y": 7
+                },
+                "surface": 2,
+                "right": 1,
+                "left": 1,
+                "up": 1,
+                "down": 2,
+                "charge": false,
+                "dirt": 1
+              },
+              {
+                "point": {
+                  "x": 3,
+                  "y": 7
+                },
+                "surface": 2,
+                "right": 1,
+                "left": 1,
+                "up": 1,
+                "down": 2,
+                "charge": false,
+                "dirt": 1
+              },
+              {
+                "point": {
+                  "x": 0,
+                  "y": 8
+                },
+                "surface": 2,
+                "right": 1,
+                "left": 2,
+                "up": 1,
+                "down": 1,
+                "charge": false,
+                "dirt": 1
+              },
+              {
+                "point": {
+                  "x": 1,
+                  "y": 8
+                },
+                "surface": 2,
+                "right": 1,
+                "left": 1,
+                "up": 1,
+                "down": 1,
+                "charge": false,
+                "dirt": 1
+              },
+              {
+                "point": {
+                  "x": 2,
+                  "y": 8
+                },
+                "surface": 2,
+                "right": 1,
+                "left": 1,
+                "up": 1,
+                "down": 1,
+                "charge": false,
+                "dirt": 1
+              },
+              {
+                "point": {
+                  "x": 3,
+                  "y": 8
+                },
+                "surface": 2,
+                "right": 2,
+                "left": 1,
+                "up": 1,
+                "down": 1,
+                "charge": false,
+                "dirt": 1
+              },
+              {
+                "point": {
+                  "x": 0,
+                  "y": 9
+                },
+                "surface": 2,
+                "right": 1,
+                "left": 2,
+                "up": 2,
+                "down": 1,
+                "charge": false,
+                "dirt": 1
+              },
+              {
+                "point": {
+                  "x": 1,
+                  "y": 9
+                },
+                "surface": 2,
+                "right": 1,
+                "left": 1,
+                "up": 2,
+                "down": 1,
+                "charge": false,
+                "dirt": 1
+              },
+              {
+                "point": {
+                  "x": 2,
+                  "y": 9
+                },
+                "surface": 2,
+                "right": 1,
+                "left": 1,
+                "up": 2,
+                "down": 1,
+                "charge": false,
+                "dirt": 1
+              },
+              {
+                "point": {
+                  "x": 3,
+                  "y": 9
+                },
+                "surface": 2,
+                "right": 2,
+                "left": 1,
+                "up": 2,
+                "down": 1,
+                "charge": false,
+                "dirt": 1
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

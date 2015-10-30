@@ -1,6 +1,8 @@
 package edu.depaul.se359;
 
 
+import edu.depaul.se359.exception.InvalidFloorCodeException;
+import edu.depaul.se359.exception.InvalidRoomCodeException;
 import edu.depaul.se359.model.HomeLayoutPlanMap;
 import edu.depaul.se359.service.LayoutParser;
 
@@ -14,14 +16,15 @@ import java.io.IOException;
  */
 public class Main {
     public static void main(String[] args) throws IOException {
-        HomeLayoutPlanMap layouts = LayoutParser.parseHomeLayout("./FloorPlans/FloorPlanLayoutHome1.json");
+        HomeLayoutPlanMap layouts = LayoutParser.parseHomeLayout("./FloorPlans/FloorPlanLayoutHome2.json");
 
-        System.out.println(layouts);
-        
-        
-        
-        
-        
-        
+        try {
+            System.out.println(layouts.getHomeLayout().getFloor(1).getRoom("roomA").getCells());
+
+        } catch (InvalidFloorCodeException e) {
+            e.printStackTrace();
+        } catch (InvalidRoomCodeException e) {
+            e.printStackTrace();
+        }
     }
 }

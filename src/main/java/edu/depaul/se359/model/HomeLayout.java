@@ -1,6 +1,8 @@
 package edu.depaul.se359.model;
 
-import java.util.List;
+import edu.depaul.se359.exception.InvalidFloorCodeException;
+
+import java.util.ArrayList;
 
 /**
  * Created on 10/10/15.
@@ -10,50 +12,30 @@ import java.util.List;
  */
 public class HomeLayout {
 
-    private String id;
-    private List<Cell> cells;
+    private ArrayList<Floor> floors;
 
-    /**
-     * Gets the id of the room layout
-     *
-     * @return String
-     */
-    public String getId() {
-        return id;
+    public ArrayList<Floor> getFloors() {
+        return floors;
     }
 
-    /**
-     * Sets the id of the room layout
-     *
-     * @param id String
-     */
-    public void setId(String id) {
-        this.id = id;
+    public void setFloors(ArrayList<Floor> floor) {
+        this.floors = floor;
     }
 
-    /**
-     * Gets the List of cells for the room layout
-     *
-     * @return List<Cell>
-     */
-    public List<Cell> getCells() {
-        return cells;
-    }
+    public Floor getFloor(int floorId) throws InvalidFloorCodeException {
+        for (Floor floor : this.floors) {
+            if (floor.getId() == floorId) {
+                return floor;
+            }
+        }
 
-    /**
-     * Sets the cells for the room layout
-     *
-     * @param cells
-     */
-    public void setCells(List<Cell> cells) {
-        this.cells = cells;
+        throw new InvalidFloorCodeException("Floor " + floorId + " does not exist.");
     }
 
     @Override
     public String toString() {
         return "HomeLayout{" +
-                "id='" + id + '\'' +
-                ", cells=" + cells +
+                "floors=" + floors +
                 '}';
     }
 }
