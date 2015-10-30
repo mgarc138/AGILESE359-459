@@ -1,38 +1,34 @@
 package edu.depaul.se359.model;
 
 import java.io.FileWriter;
-import java.io.BufferedWriter;
-import java.io.File;
 import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
-public final  class LogFile {
-	
-	private LogFile(){
-			
-	}
-	
-	
-	public static void writeLogFile(String report, String fileName) throws IOException{
-		
-		FileWriter fileWrite;
-		BufferedWriter buffWriter;
-		
-		// the file will be store in the report folder here
-		File ReportFile = new File("Reports", fileName);
-		
-		if(ReportFile.createNewFile() == true){
-			
-			System.out.print("The report file has been created as: " + fileName);
-		}
-		
-		
-		
-		
-		
-		
-		
-		
-	}
+public class LogFile {
+    private static LogFile ourInstance = new LogFile();
+
+    private LogFile() {
+    }
+
+    public static LogFile getInstance() {
+        return ourInstance;
+    }
+
+    public void writeLogFile(Level logLevel, String report) {
+        Logger.getLogger("LogFile").log(logLevel, report);
+
+        // append to file
+        FileWriter fw = null;
+        try {
+            fw = new FileWriter("Report/report.log", true);
+            fw.write("[" + logLevel + "] " + report + "\n");
+            fw.close();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
 }
