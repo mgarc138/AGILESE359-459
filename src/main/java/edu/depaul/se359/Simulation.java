@@ -4,10 +4,9 @@ import edu.depaul.se359.model.*;
 import edu.depaul.se359.service.LayoutParser;
 
 import java.io.FileNotFoundException;
-import java.util.logging.Logger;
+import java.util.logging.Level;
 
 public final class Simulation {
-    private static Logger logger = Logger.getLogger("Simulation");
 
     private Simulation(){
 		
@@ -25,7 +24,7 @@ public final class Simulation {
                     for (Cell cell : room.getCells()) {
                         if (cell.CheckisaChargingStation()) {
                             chargeStation = cell;
-                            logger.info("Found charge station: " + chargeStation.toString());
+                            LogFile.getInstance().writeLogFile(Level.INFO, "Charge station was found!");
                         }
                     }
                 }
