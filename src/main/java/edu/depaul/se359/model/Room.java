@@ -9,6 +9,11 @@ public class Room {
     ArrayList<Cell> cells;
     private String id;
 
+    public Room(String id) {
+        this.id = id;
+        cells = new ArrayList<Cell>();
+    }
+
     public Room() {
         cells = new ArrayList<Cell>();
     }

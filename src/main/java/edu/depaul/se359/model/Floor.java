@@ -11,6 +11,11 @@ public class Floor {
     private int id;
     private ArrayList<Room> rooms;
 
+    public Floor(int id) {
+        this.id = id;
+        rooms = new ArrayList<Room>();
+    }
+
     public int getId() {
         return id;
     }

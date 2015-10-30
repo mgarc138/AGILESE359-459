@@ -14,6 +14,10 @@ public class HomeLayout {
 
     private ArrayList<Floor> floors;
 
+    public HomeLayout() {
+        floors = new ArrayList<Floor>();
+    }
+
     public ArrayList<Floor> getFloors() {
         return floors;
     }
