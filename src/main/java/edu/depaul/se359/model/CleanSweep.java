@@ -2,6 +2,9 @@ package edu.depaul.se359.model;
 
 import java.util.*;
 
+import edu.depaul.se359.exception.InvalidFloorCodeException;
+import edu.depaul.se359.exception.InvalidRoomCodeException;
+
 public class CleanSweep {
 
     private Cell CurrentCell;
@@ -24,8 +27,34 @@ public class CleanSweep {
 
     }
 
-    public Map<Integer, Cell> cleanHome() {
-        VisitedCells.add(CurrentCell);
+    public Map<Integer, Cell> cleanHome(HomeLayout HouseMap) throws InvalidFloorCodeException, InvalidRoomCodeException {
+        
+    	int counter = 0;
+    	
+    	for(int i = 0; i < HouseMap.getFloors().size(); i++){
+    		
+    		for(int k = 0; k < HouseMap.getFloor(i).getRooms().size(); k++){
+    			
+    			ArrayList<Room> temp  = HouseMap.getFloor(i).getRooms();
+    			
+    			Room aRoom = temp.get(k);
+    			
+    			String id = aRoom.getId();
+    			
+    			for(int w = 0; w < HouseMap.getFloor(i).getRoom(id).getCells().size(); w++){
+    				
+    				this.HouseMap.put(counter, HouseMap.getFloor(i).getRoom(id).getCells().get(w));
+    				counter++;
+    				
+    			}
+    			
+    		}
+    		
+    		
+    	}
+    	
+    	
+    //	VisitedCells.add(CurrentCell);
 
         return null;
     }

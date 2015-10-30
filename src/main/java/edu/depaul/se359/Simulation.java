@@ -31,6 +31,7 @@ public final class Simulation {
                 }
             }
 
+            
             CleanSweep cleanSweep = new CleanSweep(chargeStation);
             cleanSweep.cleanHome();
 
