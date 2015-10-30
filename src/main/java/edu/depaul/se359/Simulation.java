@@ -1,5 +1,7 @@
 package edu.depaul.se359;
 
+import edu.depaul.se359.exception.InvalidFloorCodeException;
+import edu.depaul.se359.exception.InvalidRoomCodeException;
 import edu.depaul.se359.model.*;
 import edu.depaul.se359.service.LayoutParser;
 
@@ -32,9 +34,13 @@ public final class Simulation {
 
             
             CleanSweep cleanSweep = new CleanSweep(chargeStation);
-            cleanSweep.cleanHome();
+            cleanSweep.cleanHome(layouts.getHomeLayout());
 
         } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (InvalidFloorCodeException e) {
+            e.printStackTrace();
+        } catch (InvalidRoomCodeException e) {
             e.printStackTrace();
         }
     }
