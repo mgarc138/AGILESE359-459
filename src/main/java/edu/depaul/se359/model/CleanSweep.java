@@ -18,6 +18,7 @@ public class CleanSweep extends Observable implements Runnable {
     private List<Cell> VisitedCells;
     private List<Cell> NotVisitedCells;
     private HomeLayout HouseMap;
+    private Battery battery;
 
 
     public CleanSweep(Cell homeCell, HomeLayout houseMap) {
@@ -30,6 +31,7 @@ public class CleanSweep extends Observable implements Runnable {
         this.VisitedCells = new ArrayList<Cell>();
         this.NotVisitedCells = new ArrayList<Cell>();
         HouseMap = houseMap;
+        battery = new Battery(homeCell);
     }
 
     public Map<Integer, Cell> cleanHome() throws InvalidFloorCodeException, InvalidRoomCodeException {
@@ -40,7 +42,6 @@ public class CleanSweep extends Observable implements Runnable {
         // iterate through each floor
         for (Floor floor : HouseMap.getFloors()) {
             // iterate through each room
-
             for (Room room : floor.getRooms()) {
                 for (Cell cell : room.getCells()) {
                     CurrentCell = cell;

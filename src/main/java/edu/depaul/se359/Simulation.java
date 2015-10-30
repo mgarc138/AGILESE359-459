@@ -100,10 +100,12 @@ public class Simulation extends Application implements Observer {
     }
 
     class MyNode extends StackPane {
-        private Rectangle rectangle = new Rectangle();
-        private Text text = new Text();
+        private Rectangle rectangle;
+        private Text text;
 
         public MyNode(Cell cell) {
+            rectangle = new Rectangle();
+            text = new Text();
 
             rectangle.setWidth(48);
             rectangle.setHeight(48);
@@ -117,7 +119,7 @@ public class Simulation extends Application implements Observer {
             if (DirtDetector.isDirty(cell)) {
                 text.setText(String.valueOf(cell.getDirt()));
 
-                switch (cell.getDirt()) {
+                /*switch (cell.getDirt()) {
                     case 1:
                         rectangle.setFill(Color.LIGHTGRAY);
                         break;
@@ -128,10 +130,24 @@ public class Simulation extends Application implements Observer {
                         text.setStroke(Color.WHITE);
                         rectangle.setFill(Color.BLACK);
                         break;
-                }
+                }*/
             }
+            setSurfaceColor(cell);
 
             getChildren().addAll(rectangle, text);
+        }
+
+        private void setSurfaceColor(Cell cell) {
+            switch (cell.getSurface()) {
+                case 1:
+                    rectangle.setFill(Color.LIGHTGRAY);
+                    break;
+                case 2:
+                    rectangle.setFill(Color.LIGHTGREEN);
+                    break;
+                case 3:
+                    rectangle.setFill(Color.DARKGREEN);
+            }
         }
 
         public void setText(String text) {
@@ -139,7 +155,7 @@ public class Simulation extends Application implements Observer {
         }
 
         public void setClean() {
-            rectangle.setFill(Color.YELLOW);
+            //rectangle.setFill(Color.YELLOW);
             text.setText("0");
             text.setStroke(Color.BLACK);
         }
