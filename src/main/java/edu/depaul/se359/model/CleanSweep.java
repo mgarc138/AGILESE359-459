@@ -14,7 +14,7 @@ public class CleanSweep extends Observable implements Runnable {
 
     public GridPane grid;
     private Cell currentCell;
-    private Cell HomeCell;
+    private Cell homeCell; //Cell that Clean Sweep starts on. This is also where the charging station is located.
     private DirtContainer dirtContainer;
     // private Map<Integer, Cell> HouseMap;
     private List<Cell> VisitedCells;
@@ -25,7 +25,7 @@ public class CleanSweep extends Observable implements Runnable {
 
     public CleanSweep(Cell homeCell, HomeLayout houseMap) {
 
-        this.HomeCell = homeCell;
+        this.homeCell = homeCell;
         this.currentCell = homeCell;
 
         this.dirtContainer = new DirtContainer();
@@ -45,37 +45,45 @@ public class CleanSweep extends Observable implements Runnable {
         for (Floor floor : HouseMap.getFloors()) {
             // iterate through each room
             for (Room room : floor.getRooms()) {
+            	//TODO Visit only unvisited cells?
                 for (Cell cell : room.getCells()) {
-                	if (dirtContainer.getSweepCurrentDirt() < dirtContainer.getMaxCapacity()){
-                		currentCell = cell;
+                	if (battery.getBatteryLevel() >= 50){
+                		//We have enough charge
+                		if (dirtContainer.getSweepCurrentDirt() < dirtContainer.getMaxCapacity()){
+                			//Dirt capacity is good, let's clean!
+                    		currentCell = cell;
 
-                        try {
-                            Thread.sleep(500);
-                            cell.setDirt(0);
+                            try {
+                                Thread.sleep(500);
+                                cell.setDirt(0);
+                                dirtContainer.addDirt(cell.getDirt());
+                            } catch (InterruptedException e) {
+                                e.printStackTrace();
+                            } catch (NegativeDirtUnitsException e) {
+                                e.printStackTrace();
+                            }
+                            catch (FullCapacityException e){
+                            	LogFile.getInstance().writeLogFile(Level.INFO, "Reached capacity! Returning to charging station...");
+    	                		goEmpty();
+    	                		return null; //return out of loop
+                            }
 
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
-                        } catch (NegativeDirtUnitsException e) {
-                            e.printStackTrace();
-                        }
-
-                        setChanged();
-                        notifyObservers();
-                        counter++;
-                        try {
-							dirtContainer.addDirt(cell.getDirt());
-						} catch (NegativeDirtUnitsException e) {
-							LogFile.getInstance().writeLogFile(Level.INFO, "Invalid dirt amount");
-						} catch (FullCapacityException e) {
-							LogFile.getInstance().writeLogFile(Level.INFO, "Reached capacity! Returning to charging station...");
-	                		goEmpty();
-	                		return null; //return out of loop
-						}
+                            setChanged();
+                            notifyObservers();
+                            counter++;
+                            VisitedCells.add(cell);
+                    	}
+                    	else{
+                    		LogFile.getInstance().writeLogFile(Level.INFO, "Reached capacity! Returning to charging station...");
+                    		goEmpty();
+                    		return null; //return out of loop
+                    	}
                 	}
                 	else{
-                		LogFile.getInstance().writeLogFile(Level.INFO, "Reached capacity! Returning to charging station...");
-                		goEmpty();
-                		return null; //return out of loop
+                		//TODO Make way to charging station
+                		LogFile.getInstance().writeLogFile(Level.INFO, "Battery level halfway full. To be safe, making way to charging station.");
+                		goCharge();
+                		return null;
                 	}
     			}
     		}
@@ -94,11 +102,12 @@ public class CleanSweep extends Observable implements Runnable {
      */
     private void goEmpty() {
     	//Return to charging station at home cell
-    	move(HomeCell);
+    	currentCell = homeCell;
     	//Display "Empty Me" signal (log)
     	dirtContainer.setEmptyMeLight(true);
 		LogFile.getInstance().writeLogFile(Level.INFO, "At charing station. Empty me!");
 		try {
+			//Waits for a time, then empties dirt capacity and turns off empty me light.
 			Thread.sleep(500);
 			dirtContainer.emptyMeBag();
 			dirtContainer.setEmptyMeLight(false);
@@ -106,6 +115,15 @@ public class CleanSweep extends Observable implements Runnable {
 			e.printStackTrace();
 		}
 	}
+    
+    /**
+     * Sends the clean sweep back to the charging station and charges it.
+     */
+    private void goCharge(){
+    	currentCell = homeCell;
+    	battery.setChargeBattery();
+    	LogFile.getInstance().writeLogFile(Level.INFO, "All charged up!");
+    }
 
 	public Cell getCurrentPosition() {
         return currentCell;
