@@ -54,6 +54,14 @@ public class DirtContainer {
     	}
     	sweepCurrentDirt += value;
     }
+    
+    /**
+     * Getter method for the maximum capacity
+     * @return
+     */
+    public int getMaxCapacity(){
+    	return SWEEP_DIRT_MAXCAPACITY;
+    }
 
 
 }

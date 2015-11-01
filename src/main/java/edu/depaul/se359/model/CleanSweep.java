@@ -46,7 +46,7 @@ public class CleanSweep extends Observable implements Runnable {
             // iterate through each room
             for (Room room : floor.getRooms()) {
                 for (Cell cell : room.getCells()) {
-                	if (dirtContainer.getSweepCurrentDirt() < 50){
+                	if (dirtContainer.getSweepCurrentDirt() < dirtContainer.getMaxCapacity()){
                 		currentCell = cell;
 
                         try {
