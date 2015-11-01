@@ -1,8 +1,10 @@
 package edu.depaul.se359.model;
 
+import edu.depaul.se359.exception.FullCapacityException;
 import edu.depaul.se359.exception.InvalidFloorCodeException;
 import edu.depaul.se359.exception.InvalidRoomCodeException;
 import edu.depaul.se359.exception.NegativeDirtUnitsException;
+import edu.depaul.se359.exception.NoPossibleMovesException;
 import javafx.scene.layout.GridPane;
 
 import java.util.*;
@@ -11,9 +13,9 @@ import java.util.logging.Level;
 public class CleanSweep extends Observable implements Runnable {
 
     public GridPane grid;
-    private Cell CurrentCell;
+    private Cell currentCell;
     private Cell HomeCell;
-    private UtilityContainer DirtAnalizer;
+    private DirtContainer dirtContainer;
     // private Map<Integer, Cell> HouseMap;
     private List<Cell> VisitedCells;
     private List<Cell> NotVisitedCells;
@@ -24,9 +26,9 @@ public class CleanSweep extends Observable implements Runnable {
     public CleanSweep(Cell homeCell, HomeLayout houseMap) {
 
         this.HomeCell = homeCell;
-        this.CurrentCell = homeCell;
+        this.currentCell = homeCell;
 
-        this.DirtAnalizer = new UtilityContainer();
+        this.dirtContainer = new DirtContainer();
         //HouseMap = new HashMap<Integer, Cell>();
         this.VisitedCells = new ArrayList<Cell>();
         this.NotVisitedCells = new ArrayList<Cell>();
@@ -44,21 +46,37 @@ public class CleanSweep extends Observable implements Runnable {
             // iterate through each room
             for (Room room : floor.getRooms()) {
                 for (Cell cell : room.getCells()) {
-                    CurrentCell = cell;
+                	if (dirtContainer.getSweepCurrentDirt() < 50){
+                		currentCell = cell;
 
-                    try {
-                        Thread.sleep(500);
-                        cell.setDirt(0);
+                        try {
+                            Thread.sleep(500);
+                            cell.setDirt(0);
 
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    } catch (NegativeDirtUnitsException e) {
-                        e.printStackTrace();
-                    }
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        } catch (NegativeDirtUnitsException e) {
+                            e.printStackTrace();
+                        }
 
-                    setChanged();
-                    notifyObservers();
-                    counter++;
+                        setChanged();
+                        notifyObservers();
+                        counter++;
+                        try {
+							dirtContainer.addDirt(cell.getDirt());
+						} catch (NegativeDirtUnitsException e) {
+							LogFile.getInstance().writeLogFile(Level.INFO, "Invalid dirt amount");
+						} catch (FullCapacityException e) {
+							LogFile.getInstance().writeLogFile(Level.INFO, "Reached capacity! Returning to charging station...");
+	                		goEmpty();
+	                		return null; //return out of loop
+						}
+                	}
+                	else{
+                		LogFile.getInstance().writeLogFile(Level.INFO, "Reached capacity! Returning to charging station...");
+                		goEmpty();
+                		return null; //return out of loop
+                	}
     			}
     		}
     	}
@@ -71,8 +89,26 @@ public class CleanSweep extends Observable implements Runnable {
         return null;
     }
 
-    public Cell getCurrentPosition() {
-        return CurrentCell;
+    /**
+     * Stops the cleaning and tracks progress back to the charging station. prints statement to the log
+     */
+    private void goEmpty() {
+    	//Return to charging station at home cell
+    	move(HomeCell);
+    	//Display "Empty Me" signal (log)
+    	dirtContainer.setEmptyMeLight(true);
+		LogFile.getInstance().writeLogFile(Level.INFO, "At charing station. Empty me!");
+		try {
+			Thread.sleep(500);
+			dirtContainer.emptyMeBag();
+			dirtContainer.setEmptyMeLight(false);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public Cell getCurrentPosition() {
+        return currentCell;
     }
 
     /*public Map<Integer, Cell> addingCellsToHouseMap(Map<Integer, Cell> houseMap) {
@@ -80,7 +116,7 @@ public class CleanSweep extends Observable implements Runnable {
         Integer CellCount = this.HouseMap.size();
         LogFile.getInstance().writeLogFile(Level.INFO, CellCount.toString());
 
-        if (this.HouseMap.containsValue(this.CurrentCell)) {
+        if (this.HouseMap.containsValue(this.currentCell)) {
 
             // it contains a value of the current cell don't added
 
@@ -88,13 +124,13 @@ public class CleanSweep extends Observable implements Runnable {
             // note A map maps a key to a value. If you have a value and you know the map contains this value, why do you need the key anymore
             // if it doesn't contain add it
 
-            this.HouseMap.put(CellCount, this.CurrentCell);
+            this.HouseMap.put(CellCount, this.currentCell);
 
         }
 
         //get a list of all the open cells available from the current one
 
-        List<Cell> openNeighborsCellsList = this.getAllTheAvailableMoves(CurrentCell);
+        List<Cell> openNeighborsCellsList = this.getAllTheAvailableMoves(currentCell);
         LogFile.getInstance().writeLogFile(Level.INFO, "Available Moves: " + openNeighborsCellsList.toString());
 
         // using iterator we are more efficient in the traversing of the data structure so weh we say get next() is O(1) which is more efficient than O(n) regular for loop
@@ -122,9 +158,15 @@ public class CleanSweep extends Observable implements Runnable {
         return this.HouseMap;
     }*/
 
-    public List<Cell> getAllTheAvailableMoves(Cell CurentPositionCell) {
+    public List<Cell> getAllTheAvailableMoves(Cell currentPositionCell) {
 
         List<Cell> allAvailableSweepMoves = new ArrayList<Cell>();
+        
+        try {
+			NavigationSensorsPath.getInstance().openCells(currentPositionCell);
+		} catch (NoPossibleMovesException e) {
+			LogFile.getInstance().writeLogFile(Level.INFO, "No moves possible!");
+		}
 
         LogFile.getInstance().writeLogFile(Level.INFO, allAvailableSweepMoves.toString());
 
@@ -134,10 +176,10 @@ public class CleanSweep extends Observable implements Runnable {
     private List<Cell> move(Cell CelldestinationToMove) {
 
         List<Cell> listOfCellsTraversed = new ArrayList<Cell>();
-        listOfCellsTraversed.add(this.CurrentCell);
+        listOfCellsTraversed.add(this.currentCell);
         Cell nextCell;
 
-        while (!(this.CurrentCell.sameCell(CelldestinationToMove))) {
+        while (!(this.currentCell.sameCell(CelldestinationToMove))) {
 
             // to be implemented block by other feactures yet.
         }
@@ -150,7 +192,7 @@ public class CleanSweep extends Observable implements Runnable {
     public void SetNotVistedNeighborsCellsList() {
 
         List<Cell> NeighborsCellsList = new ArrayList<Cell>();
-        NeighborsCellsList = getAllTheAvailableMoves(this.CurrentCell);
+        NeighborsCellsList = getAllTheAvailableMoves(this.currentCell);
         NeighborsCellsList.removeAll(VisitedCells);
         NeighborsCellsList.removeAll(NotVisitedCells);
 

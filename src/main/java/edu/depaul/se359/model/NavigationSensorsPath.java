@@ -14,7 +14,7 @@ public final class NavigationSensorsPath {
     private NavigationSensorsPath() {
     }
 
-    public NavigationSensorsPath getInstance() {
+    public static NavigationSensorsPath getInstance() {
         return ourInstance;
     }
 
