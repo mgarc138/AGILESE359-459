@@ -49,24 +49,27 @@ public class CleanSweep extends Observable implements Runnable {
                 			//Dirt capacity is good, let's clean!
                     		currentCell = cell;
 
-                            try {
+                    		try {
                                 Thread.sleep(500);
-                                cell.setDirt(0);
-                                dirtContainer.addDirt(cell.getDirt());
+
                             } catch (InterruptedException e) {
                                 e.printStackTrace();
-                            } catch (NegativeDirtUnitsException e) {
-                                e.printStackTrace();
                             }
-                            catch (FullCapacityException e){
-                            	LogFile.getInstance().writeLogFile(Level.INFO, "Reached capacity! Returning to charging station...");
+
+                            counter++;
+                            try {
+    							dirtContainer.addDirt(cell.getDirt());
+                                cell.setDirt(0);
+                            } catch (NegativeDirtUnitsException e) {
+    							LogFile.getInstance().writeLogFile(Level.INFO, "Invalid dirt amount");
+    						} catch (FullCapacityException e) {
+    							LogFile.getInstance().writeLogFile(Level.INFO, "Reached capacity! Returning to charging station...");
     	                		goEmpty();
     	                		return null; //return out of loop
-                            }
+    						}
 
                             setChanged();
                             notifyObservers();
-                            counter++;
                             VisitedCells.add(cell);
                     	}
                     	else{
@@ -75,31 +78,6 @@ public class CleanSweep extends Observable implements Runnable {
                     		return null; //return out of loop
                     	}
                 	}
-                	if (dirtContainer.getSweepCurrentDirt() < 50){
-                		currentCell = cell;
-
-                        try {
-                            Thread.sleep(500);
-
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
-                        }
-
-                        counter++;
-                        try {
-							dirtContainer.addDirt(cell.getDirt());
-                            cell.setDirt(0);
-                        } catch (NegativeDirtUnitsException e) {
-							LogFile.getInstance().writeLogFile(Level.INFO, "Invalid dirt amount");
-						} catch (FullCapacityException e) {
-							LogFile.getInstance().writeLogFile(Level.INFO, "Reached capacity! Returning to charging station...");
-	                		goEmpty();
-	                		return null; //return out of loop
-						}
-
-                        setChanged();
-                        notifyObservers();
-                    }
                 	else{
                 		//TODO Make way to charging station
                 		LogFile.getInstance().writeLogFile(Level.INFO, "Battery level halfway full. To be safe, making way to charging station.");
