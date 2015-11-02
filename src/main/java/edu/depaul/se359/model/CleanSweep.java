@@ -1,10 +1,6 @@
 package edu.depaul.se359.model;
 
-import edu.depaul.se359.exception.FullCapacityException;
-import edu.depaul.se359.exception.InvalidFloorCodeException;
-import edu.depaul.se359.exception.InvalidRoomCodeException;
-import edu.depaul.se359.exception.NegativeDirtUnitsException;
-import edu.depaul.se359.exception.NoPossibleMovesException;
+import edu.depaul.se359.exception.*;
 import javafx.scene.layout.GridPane;
 
 import java.util.*;
@@ -79,6 +75,31 @@ public class CleanSweep extends Observable implements Runnable {
                     		return null; //return out of loop
                     	}
                 	}
+                	if (dirtContainer.getSweepCurrentDirt() < 50){
+                		currentCell = cell;
+
+                        try {
+                            Thread.sleep(500);
+
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+
+                        counter++;
+                        try {
+							dirtContainer.addDirt(cell.getDirt());
+                            cell.setDirt(0);
+                        } catch (NegativeDirtUnitsException e) {
+							LogFile.getInstance().writeLogFile(Level.INFO, "Invalid dirt amount");
+						} catch (FullCapacityException e) {
+							LogFile.getInstance().writeLogFile(Level.INFO, "Reached capacity! Returning to charging station...");
+	                		goEmpty();
+	                		return null; //return out of loop
+						}
+
+                        setChanged();
+                        notifyObservers();
+                    }
                 	else{
                 		//TODO Make way to charging station
                 		LogFile.getInstance().writeLogFile(Level.INFO, "Battery level halfway full. To be safe, making way to charging station.");
