@@ -36,6 +36,7 @@ public class CleanSweep extends Observable implements Runnable {
 
         int counter = 0;
         HashMap<Integer, Cell> houseCells = new HashMap<Integer, Cell>();
+        Cell previousCell = null;
 
         // iterate through each floor
         for (Floor floor : HouseMap.getFloors()) {
@@ -48,6 +49,7 @@ public class CleanSweep extends Observable implements Runnable {
                 		if (dirtContainer.getSweepCurrentDirt() < dirtContainer.getMaxCapacity()){
                 			//Dirt capacity is good, let's clean!
                     		currentCell = cell;
+                    		battery.setDecrementBatteryLevel(currentCell, previousCell);
 
                     		try {
                                 Thread.sleep(500);
@@ -71,6 +73,7 @@ public class CleanSweep extends Observable implements Runnable {
                             setChanged();
                             notifyObservers();
                             VisitedCells.add(cell);
+                            previousCell = cell;
                     	}
                     	else{
                     		LogFile.getInstance().writeLogFile(Level.INFO, "Reached capacity! Returning to charging station...");
@@ -79,7 +82,7 @@ public class CleanSweep extends Observable implements Runnable {
                     	}
                 	}
                 	else{
-                		//TODO Make way to charging station
+                		//Make way to charging station
                 		LogFile.getInstance().writeLogFile(Level.INFO, "Battery level halfway full. To be safe, making way to charging station.");
                 		goCharge();
                 		return null;

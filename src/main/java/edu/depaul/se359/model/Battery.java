@@ -21,9 +21,22 @@ public class Battery {
 
     public static double calculateWeightUnits(Cell cellA, Cell cellB) {
         double weight = 0;
+        double cellASurface, cellBSurface;
         
+        if (cellA == null){
+        	cellASurface = 0;
+        }
+        else{
+        	cellASurface = (double) cellA.getSurface();
+        }
+        if (cellB == null){
+        	cellBSurface = 0;
+        }
+        else{
+        	cellBSurface = (double) cellB.getSurface();
+        }
         //Average two surface values
-        weight = ((double) cellA.getSurface() + cellB.getSurface()) / 2;
+        weight = (cellASurface + cellBSurface) / 2;
         
         return weight;
     }
