@@ -40,6 +40,13 @@ public class Battery {
             UnitesWeight = 2.5;
 
         }
+        
+        else if ((cellA.getSurface() == 1 && cellB.getSurface() == 3) || (cellA.getSurface() == 3 && cellB.getSurface() == 2)) {
+
+            UnitesWeight = 2;
+
+        }
+        
 
         return UnitesWeight;
 
