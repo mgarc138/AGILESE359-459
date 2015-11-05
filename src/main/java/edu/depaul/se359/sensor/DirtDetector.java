@@ -16,4 +16,28 @@ public class DirtDetector {
     public static boolean isDirty(Cell cell) {
         return cell.getDirt() > 0;
     }
+    
+    public static boolean isCellObstacle(int obstacle){
+    	
+    	return obstacle == 3;
+    }
+    
+    public static boolean isCellOpen(int open){
+    	
+    	return open == 2;
+    }
+    
+
+    public static boolean isCellUnkown(int unknown){
+    	
+    	return unknown == 1;
+    }
+    
+    public static boolean isCellStair(int stair){
+    	
+    	return stair == 4;
+    }
+    
+    
+    
 }
