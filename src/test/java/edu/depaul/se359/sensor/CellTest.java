@@ -68,8 +68,46 @@ public class CellTest extends TestCase {
 		 	 
 	}
 	
+	@Test
+    public void testCellSurfaceBareFloor() throws Exception {
+		
+		 int xPosition = 4, yPosition = 3, rightPath = 1, leftPath = 1, upPath = 1, downPath = 1;
+		 int surface = 1;
+		
+		 Cell cell = new Cell(xPosition, yPosition, rightPath, leftPath, upPath, downPath, false, 2, surface);
+		 
+		 assertTrue(DirtDetector.isCellSurfaceBareFloor(cell.getSurface()));
+		 
+		 	 
+	}
 	
 	
+	@Test
+    public void testCellSurfaceLowPile() throws Exception {
+		
+		 int xPosition = 4, yPosition = 3, rightPath = 1, leftPath = 1, upPath = 1, downPath = 1;
+		 int surface = 2;
+		
+		 Cell cell = new Cell(xPosition, yPosition, rightPath, leftPath, upPath, downPath, false, 2, surface);
+		 
+		 assertTrue(DirtDetector.isCellSurfaceLowPile(cell.getSurface()));
+		 
+		 	 
+	}
+	
+	
+	@Test
+    public void testCellSurfaceHighPileCarpet() throws Exception {
+		
+		 int xPosition = 4, yPosition = 3, rightPath = 1, leftPath = 1, upPath = 1, downPath = 1;
+		 int surface = 3;
+		
+		 Cell cell = new Cell(xPosition, yPosition, rightPath, leftPath, upPath, downPath, false, 2, surface);
+		 
+		 assertTrue(DirtDetector.isCellSurfaceHighPileCarpet(cell.getSurface()));
+		 
+		 	 
+	}
 	
 
 }
