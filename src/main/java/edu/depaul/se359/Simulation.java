@@ -4,6 +4,8 @@ import edu.depaul.se359.model.*;
 import edu.depaul.se359.sensor.DirtDetector;
 import edu.depaul.se359.service.LayoutParser;
 import javafx.application.Application;
+import javafx.application.Platform;
+import javafx.event.EventHandler;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.layout.GridPane;
@@ -12,6 +14,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
 
 import java.io.FileNotFoundException;
 import java.util.Observable;
@@ -22,10 +25,11 @@ import java.util.logging.Level;
  * Created by eric on 10/30/15.
  */
 public class Simulation extends Application implements Observer {
-    Scene scene;
-    GridPane gridPane;
-    CleanSweep cleanSweep;
-    HomeLayoutPlanMap layouts;
+    private Scene scene;
+    private GridPane gridPane;
+    private CleanSweep cleanSweep;
+    private HomeLayoutPlanMap layouts;
+    private Thread thread;
 
     public static void main(String[] args) {
         launch(args);
@@ -70,7 +74,16 @@ public class Simulation extends Application implements Observer {
 
         stage.show();
 
-        Thread thread = new Thread(cleanSweep);
+        // Close the program when user exits the window
+        stage.setOnCloseRequest(new EventHandler<WindowEvent>() {
+            public void handle(WindowEvent windowEvent) {
+                // stop the cleansweeper thread
+                thread.stop();
+                Platform.exit();
+            }
+        });
+
+        thread = new Thread(cleanSweep);
         thread.start();
     }
 
