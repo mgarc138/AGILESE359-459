@@ -2,6 +2,7 @@ package edu.depaul.se359;
 
 import edu.depaul.se359.model.*;
 import edu.depaul.se359.sensor.DirtDetector;
+import edu.depaul.se359.sensor.NavigationSensor;
 import edu.depaul.se359.service.LayoutParser;
 import javafx.application.Application;
 import javafx.application.Platform;
@@ -30,6 +31,7 @@ public class Simulation extends Application implements Observer {
     private CleanSweep cleanSweep;
     private HomeLayoutPlanMap layouts;
     private Thread thread;
+    private NavigationSensor nav;
 
     public static void main(String[] args) {
         launch(args);
@@ -37,10 +39,13 @@ public class Simulation extends Application implements Observer {
 
     @Override
     public void init() {
+        // TODO: Dont hard code
+        NavigationSensor.getInstance().setGridSize(6, 10);
         gridPane = new GridPane();
 
         try {
             layouts = LayoutParser.parseHomeLayout("./FloorPlans/FloorPlanLayoutHome2.json");
+
             Cell chargeStation = null;
             // Get the charge station
             for (Floor floor : layouts.getHomeLayout().getFloors()) {
@@ -53,10 +58,10 @@ public class Simulation extends Application implements Observer {
 
                         // add the cells to the GUI
                         gridPane.add(new MyNode(cell), cell.getX(), cell.getY());
+                        NavigationSensor.getInstance().addCellToPath(cell.getX(), cell.getY(), cell.getSurface() < 4 ? 0 : 1);
                     }
                 }
             }
-
 
             cleanSweep = new CleanSweep(chargeStation, layouts.getHomeLayout());
             cleanSweep.addObserver(this);
@@ -68,7 +73,6 @@ public class Simulation extends Application implements Observer {
 
     @Override
     public void start(Stage stage) throws Exception {
-
         scene = new Scene(gridPane);
         stage.setScene(scene);
 
@@ -88,6 +92,8 @@ public class Simulation extends Application implements Observer {
     }
 
     public void update(Observable observable, Object o) {
+        // TODO: Add an image showing where the current position of the clean sweeper is
+
         CleanSweep cs = (CleanSweep) observable;
         LogFile.getInstance().writeLogFile(Level.INFO, cs.getCurrentPosition().getPoint().toString());
 
@@ -160,6 +166,10 @@ public class Simulation extends Application implements Observer {
                     break;
                 case 3:
                     rectangle.setFill(Color.DARKGREEN);
+                    break;
+                case 4:
+                    rectangle.setFill(Color.BLACK);
+                    break;
             }
         }
 

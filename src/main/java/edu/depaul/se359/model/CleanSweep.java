@@ -1,22 +1,22 @@
 package edu.depaul.se359.model;
 
 import edu.depaul.se359.exception.*;
-import javafx.scene.layout.GridPane;
+import edu.depaul.se359.model.search.AStarNode;
+import edu.depaul.se359.sensor.NavigationSensor;
 
 import java.util.*;
 import java.util.logging.Level;
 
 public class CleanSweep extends Observable implements Runnable {
 
-    public GridPane grid;
     private Cell currentCell;
     private Cell homeCell; //Cell that Clean Sweep starts on. This is also where the charging station is located.
     private DirtContainer dirtContainer;
-    // private Map<Integer, Cell> HouseMap;
     private List<Cell> VisitedCells;
     private List<Cell> NotVisitedCells;
     private HomeLayout HouseMap;
     private Battery battery;
+    private NavigationSensor nav;
 
 
     public CleanSweep(Cell homeCell, HomeLayout houseMap) {
@@ -34,7 +34,6 @@ public class CleanSweep extends Observable implements Runnable {
 
     public Map<Integer, Cell> cleanHome() throws InvalidFloorCodeException, InvalidRoomCodeException {
 
-        int counter = 0;
         HashMap<Integer, Cell> houseCells = new HashMap<Integer, Cell>();
         Cell previousCell = null;
 
@@ -51,14 +50,13 @@ public class CleanSweep extends Observable implements Runnable {
                     		currentCell = cell;
                     		battery.setDecrementBatteryLevel(currentCell, previousCell);
 
-                    		try {
+                    		/*try {
                                 Thread.sleep(500);
 
                             } catch (InterruptedException e) {
                                 e.printStackTrace();
-                            }
+                            }*/
 
-                            counter++;
                             try {
     							dirtContainer.addDirt(cell.getDirt());
                                 cell.setDirt(0);
@@ -93,7 +91,7 @@ public class CleanSweep extends Observable implements Runnable {
 
         // System.out.println("Grid: " + map);
 
-        LogFile.getInstance().writeLogFile(Level.INFO, "House Cells: " + houseCells.toString());
+        /*LogFile.getInstance().writeLogFile(Level.INFO, "House Cells: " + houseCells.toString());*/
         Thread.currentThread().interrupt();
 
         return null;
@@ -106,10 +104,11 @@ public class CleanSweep extends Observable implements Runnable {
     	//Return to charging station at home cell
     	currentCell = homeCell;
     	//Display "Empty Me" signal (log)
+
     	dirtContainer.setEmptyMeLight(true);
-		LogFile.getInstance().writeLogFile(Level.INFO, "At charing station. Empty me!");
-		try {
-			//Waits for a time, then empties dirt capacity and turns off empty me light.
+        LogFile.getInstance().writeLogFile(Level.INFO, "At charging station. Empty me!");
+        try {
+            //Waits for a time, then empties dirt capacity and turns off empty me light.
 			Thread.sleep(500);
 			dirtContainer.emptyMeBag();
 			dirtContainer.setEmptyMeLight(false);
@@ -122,7 +121,26 @@ public class CleanSweep extends Observable implements Runnable {
      * Sends the clean sweep back to the charging station and charges it.
      */
     private void goCharge(){
-    	currentCell = homeCell;
+        /**
+         * A* Pathfinding to find to shortest path to the charger
+         *
+         * TODO: Seperate this into the Navigation Class
+         */
+        List<AStarNode> path = NavigationSensor.getInstance().pathToTarget(currentCell.getX(), currentCell.getY(), homeCell.getX(), homeCell.getY());
+        System.out.println(path);
+
+        if (path != null && path.size() > 0) {
+            System.out.println("Paths: " + Arrays.toString(path.toArray()));
+
+            for (int i = 0; i < path.size(); i++) {
+                System.out.printf("Move to: (%d,%d)\n", path.get(i).getX(), path.get(i).getY());
+                currentCell = this.HouseMap.getCell(path.get(i).getX(), path.get(i).getY());
+
+                setChanged();
+                notifyObservers();
+            }
+        }
+
     	battery.setChargeBattery();
     	LogFile.getInstance().writeLogFile(Level.INFO, "All charged up!");
     }
