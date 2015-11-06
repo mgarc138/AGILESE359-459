@@ -24,6 +24,10 @@ public class Cell {
     private Cell upperCell;
     private Cell lowerCell;
 
+    public Cell(int x, int y) {
+        point = new CoordinatePoint(x, y);
+    }
+
     public Cell(int xPosition, int yPosition, int rightPath, int leftPath, int upPath, int downPath, boolean charge, int dirt, int surface) throws InvalidFloorCodeException, NegativeDirtUnitsException {
 
         point = new CoordinatePoint(xPosition, yPosition);

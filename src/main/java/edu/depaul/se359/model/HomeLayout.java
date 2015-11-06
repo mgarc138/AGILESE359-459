@@ -36,6 +36,20 @@ public class HomeLayout {
         throw new InvalidFloorCodeException("Floor " + floorId + " does not exist.");
     }
 
+    public Cell getCell(int x, int y) {
+        for (Floor floor : floors) {
+            for (Room room : floor.getRooms()) {
+                for (Cell cell : room.getCells()) {
+                    if (cell.getPoint().equals(new CoordinatePoint(x, y))) {
+                        return cell;
+                    }
+                }
+            }
+        }
+
+        throw new IllegalArgumentException("Invalid cell coordinates given");
+    }
+
     @Override
     public String toString() {
         return "HomeLayout{" +

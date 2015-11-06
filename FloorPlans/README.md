@@ -11,4 +11,5 @@
 
 1. Bare Floor
 2. Low-pile carpter
-3.High-pile carpet
+3. High-pile carpet
+4. UnPassable

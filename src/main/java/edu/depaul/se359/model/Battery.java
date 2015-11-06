@@ -20,36 +20,25 @@ public class Battery {
     }
 
     public static double calculateWeightUnits(Cell cellA, Cell cellB) {
-
-        double UnitesWeight = 0;
-
-        if (cellA.getSurface() == 1 && cellB.getSurface() == 1) {
-
-            UnitesWeight = 1;
-        } else if (cellA.getSurface() == 2 && cellB.getSurface() == 2) {
-            UnitesWeight = 2;
-        } else if (cellA.getSurface() == 3 && cellB.getSurface() == 3) {
-            UnitesWeight = 3;
-
-        } else if ((cellA.getSurface() == 1 && cellB.getSurface() == 2) || (cellA.getSurface() == 2 && cellB.getSurface() == 1)) {
-
-            UnitesWeight = 1.5;
-
-        } else if ((cellA.getSurface() == 2 && cellB.getSurface() == 3) || (cellA.getSurface() == 3 && cellB.getSurface() == 2)) {
-
-            UnitesWeight = 2.5;
-
-        }
+        double weight = 0;
+        double cellASurface, cellBSurface;
         
-        else if ((cellA.getSurface() == 1 && cellB.getSurface() == 3) || (cellA.getSurface() == 3 && cellB.getSurface() == 2)) {
-
-            UnitesWeight = 2;
-
+        if (cellA == null){
+        	cellASurface = 0;
         }
+        else{
+        	cellASurface = (double) cellA.getSurface();
+        }
+        if (cellB == null){
+        	cellBSurface = 0;
+        }
+        else{
+        	cellBSurface = (double) cellB.getSurface();
+        }
+        //Average two surface values
+        weight = (cellASurface + cellBSurface) / 2;
         
-
-        return UnitesWeight;
-
+        return weight;
     }
 
     /**
@@ -73,5 +62,9 @@ public class Battery {
     public void setShortestDirectionWeight(double unitWeight) {
 
         this.shortestDirectionWeight = unitWeight;
+    }
+    
+    public double getBatteryLevel(){
+    	return CurrentBatteryLevel;
     }
 }
