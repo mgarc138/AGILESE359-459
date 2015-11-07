@@ -22,11 +22,11 @@ public final class AStarLogic {
      */
     public List<AStarNode> getPath(AStarNode[][] grid, AStarNode start, AStarNode target, AStarNode... busyNodes) {
         if (target.getNodeValue() == 1) // the target is an unwalkable node
-            return new ArrayList<>();  // return empty path
+            return new ArrayList<AStarNode>();  // return empty path
 
-        List<AStarNode> open = new ArrayList<>();
-        List<AStarNode> closed = new ArrayList<>();
-        List<AStarNode> path = new ArrayList<>();
+        List<AStarNode> open = new ArrayList<AStarNode>();
+        List<AStarNode> closed = new ArrayList<AStarNode>();
+        List<AStarNode> path = new ArrayList<AStarNode>();
 
         AStarNode current = start;
 
@@ -64,7 +64,7 @@ public final class AStarLogic {
                 open.remove(current);
                 current = getSmallest(open);
                 if (current == null)
-                    return new ArrayList<>();
+                    return new ArrayList<AStarNode>();
             }
         }
 
