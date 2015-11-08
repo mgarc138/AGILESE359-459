@@ -23,6 +23,18 @@ public class CellTest extends TestCase {
 		 		 	 
 	}
 	
+	@Test
+    public void testSurface() throws Exception {
+		
+		 int xPosition = 1, yPosition = 2, rightPath = 4, leftPath = 4, upPath = 4, downPath = 4;
+		 int surface = 1;
+		 Cell cell = new Cell(xPosition, yPosition, rightPath, leftPath, upPath, downPath, false, 2, surface);
+		 
+		 assertTrue(1 == cell.getSurface());
+		 
+		 		 	 
+	}
+	
 	
 	@Test
     public void testCellNeighborsAreStairs() throws Exception {

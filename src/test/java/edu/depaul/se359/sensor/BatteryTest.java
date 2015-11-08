@@ -51,9 +51,11 @@ public class BatteryTest extends TestCase {
         bat.setDecrementBatteryLevel(cellA, cellB);
         
         assertTrue(98 == bat.getBatteryLevel());
-        
-        
+            
 	}
+	
+	
+	
 	
 
     @Test
