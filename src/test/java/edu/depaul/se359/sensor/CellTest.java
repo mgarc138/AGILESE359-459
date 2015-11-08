@@ -12,6 +12,19 @@ import org.junit.Test;
 public class CellTest extends TestCase {
 	
 	@Test
+    public void testCell() throws Exception {
+		
+		 int xPosition = 1, yPosition = 2, rightPath = 4, leftPath = 4, upPath = 4, downPath = 4;
+		
+		 Cell cell = new Cell(xPosition, yPosition, rightPath, leftPath, upPath, downPath, false, 2, 1);
+		 
+		 assertTrue(1 == cell.getX());
+		 assertTrue(2 == cell.getY());
+		 		 	 
+	}
+	
+	
+	@Test
     public void testCellNeighborsAreStairs() throws Exception {
 		
 		 int xPosition = 0, yPosition = 0, rightPath = 4, leftPath = 4, upPath = 4, downPath = 4;
