@@ -648,6 +648,169 @@
                 "dirt": 1
               }
             ]
+          },
+          {
+            "id": "filler",
+            "width": 0,
+            "height": 0,
+            "cells": [
+              {
+                "point": {
+                  "x": 0,
+                  "y": 5
+                },
+                "surface": 4,
+                "right": 1,
+                "left": 1,
+                "up": 2,
+                "down": 1,
+                "charge": false,
+                "dirt": 0
+              },
+              {
+                "point": {
+                  "x": 1,
+                  "y": 5
+                },
+                "surface": 4,
+                "right": 1,
+                "left": 1,
+                "up": 2,
+                "down": 1,
+                "charge": false,
+                "dirt": 0
+              },
+              {
+                "point": {
+                  "x": 2,
+                  "y": 5
+                },
+                "surface": 4,
+                "right": 1,
+                "left": 1,
+                "up": 2,
+                "down": 1,
+                "charge": false,
+                "dirt": 0
+              },
+              {
+                "point": {
+                  "x": 3,
+                  "y": 5
+                },
+                "surface": 4,
+                "right": 1,
+                "left": 1,
+                "up": 2,
+                "down": 1,
+                "charge": false,
+                "dirt": 0
+              },
+              {
+                "point": {
+                  "x": 0,
+                  "y": 6
+                },
+                "surface": 4,
+                "right": 1,
+                "left": 1,
+                "up": 2,
+                "down": 1,
+                "charge": false,
+                "dirt": 0
+              },
+              {
+                "point": {
+                  "x": 1,
+                  "y": 6
+                },
+                "surface": 4,
+                "right": 1,
+                "left": 1,
+                "up": 2,
+                "down": 1,
+                "charge": false,
+                "dirt": 0
+              },
+              {
+                "point": {
+                  "x": 2,
+                  "y": 6
+                },
+                "surface": 4,
+                "right": 1,
+                "left": 1,
+                "up": 2,
+                "down": 1,
+                "charge": false,
+                "dirt": 0
+              },
+              {
+                "point": {
+                  "x": 3,
+                  "y": 6
+                },
+                "surface": 4,
+                "right": 1,
+                "left": 1,
+                "up": 2,
+                "down": 1,
+                "charge": false,
+                "dirt": 0
+              },
+              {
+                "point": {
+                  "x": 4,
+                  "y": 8
+                },
+                "surface": 4,
+                "right": 1,
+                "left": 1,
+                "up": 2,
+                "down": 1,
+                "charge": false,
+                "dirt": 0
+              },
+              {
+                "point": {
+                  "x": 4,
+                  "y": 9
+                },
+                "surface": 4,
+                "right": 1,
+                "left": 1,
+                "up": 2,
+                "down": 1,
+                "charge": false,
+                "dirt": 0
+              },
+              {
+                "point": {
+                  "x": 5,
+                  "y": 8
+                },
+                "surface": 4,
+                "right": 1,
+                "left": 1,
+                "up": 2,
+                "down": 1,
+                "charge": false,
+                "dirt": 0
+              },
+              {
+                "point": {
+                  "x": 5,
+                  "y": 9
+                },
+                "surface": 4,
+                "right": 1,
+                "left": 1,
+                "up": 2,
+                "down": 1,
+                "charge": false,
+                "dirt": 0
+              }
+            ]
           }
         ]
       }

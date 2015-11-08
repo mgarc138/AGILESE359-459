@@ -1,6 +1,8 @@
 package edu.depaul.se359.model;
 
 import edu.depaul.se359.exception.NoPossibleMovesException;
+import edu.depaul.se359.model.search.AStarLogic;
+import edu.depaul.se359.model.search.AStarNode;
 
 import java.util.List;
 
@@ -10,6 +12,10 @@ import java.util.List;
 
 public final class NavigationSensorsPath {
     private static NavigationSensorsPath ourInstance = new NavigationSensorsPath();
+
+    private AStarNode[][] aiGrid = new AStarNode[6][10];
+    private AStarLogic ai = new AStarLogic();
+    private AStarNode start, target;
 
     private NavigationSensorsPath() {
     }
@@ -206,5 +212,18 @@ public final class NavigationSensorsPath {
 
     }
 
+    public List<AStarNode> pathToTarget(Cell startCell, Cell targetCell) {
 
+        // AStar to Charge
+        start = aiGrid[startCell.getX()][startCell.getY()];
+        target = aiGrid[targetCell.getX()][targetCell.getY()];
+
+        return ai.getPath(aiGrid, start, target);
+    }
+
+    public void addCellToPath(int x, int y, int pathable) {
+
+        aiGrid[x][y] = new AStarNode(x, y, 0, pathable);
+        System.out.println(aiGrid[x][y]);
+    }
 }
