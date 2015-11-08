@@ -6,11 +6,9 @@ import edu.depaul.se359.exception.NegativeDirtUnitsException;
 import edu.depaul.se359.model.DirtContainer;
 import junit.framework.TestCase;
 
-import org.junit.Rule;
+
 import org.junit.Test;
-import org.junit.rules.ExpectedException;
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
+
 
 public class DirtContainerTest extends TestCase  {
 	
@@ -94,7 +92,7 @@ public class DirtContainerTest extends TestCase  {
 	
 	
 	@Test(expected = FullCapacityException.class)
-    public void test3CurrentSweepDirtCollected() throws FullCapacityException, Exception{
+	public void test3CurrentSweepDirtCollected() throws FullCapacityException, NegativeDirtUnitsException{
 	
 		DirtContainer SweepVacuum = new DirtContainer();
 		SweepVacuum.addDirt(30);
