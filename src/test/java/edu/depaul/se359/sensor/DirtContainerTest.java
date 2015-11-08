@@ -92,12 +92,20 @@ public class DirtContainerTest extends TestCase  {
 	
 	
 	@Test(expected = FullCapacityException.class)
-	public void test3CurrentSweepDirtCollected() throws FullCapacityException, NegativeDirtUnitsException{
+	public void test3CurrentSweepDirtCollected(){
 	
+		boolean thrown = false;
 		DirtContainer SweepVacuum = new DirtContainer();
-		SweepVacuum.addDirt(30);
-		SweepVacuum.addDirt(40);
+		try {
+			SweepVacuum.addDirt(30);
+			SweepVacuum.addDirt(40);
+		} catch (NegativeDirtUnitsException e) {
+			e.printStackTrace();
+		} catch (FullCapacityException e) {
+			thrown = true;
+		}
 		
+		assertTrue(thrown);
 			
 	}
 	
