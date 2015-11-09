@@ -17,7 +17,7 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 
-import java.io.FileNotFoundException;
+import java.io.InputStream;
 import java.util.Observable;
 import java.util.Observer;
 import java.util.logging.Level;
@@ -43,32 +43,29 @@ public class Simulation extends Application implements Observer {
         NavigationSensor.getInstance().setGridSize(6, 10);
         gridPane = new GridPane();
 
-        try {
-            layouts = LayoutParser.parseHomeLayout("./FloorPlans/FloorPlanLayoutHome2.json");
+        InputStream file = getClass().getResourceAsStream("/FloorPlans/FloorPlanLayoutHome2.json");
 
-            Cell chargeStation = null;
-            // Get the charge station
-            for (Floor floor : layouts.getHomeLayout().getFloors()) {
-                for (Room room : floor.getRooms()) {
-                    for (Cell cell : room.getCells()) {
-                        if (cell.CheckisaChargingStation()) {
-                            chargeStation = cell;
-                            LogFile.getInstance().writeLogFile(Level.INFO, "Charge station was found!");
-                        }
+        layouts = LayoutParser.parseHomeLayout(file);
 
-                        // add the cells to the GUI
-                        gridPane.add(new MyNode(cell), cell.getX(), cell.getY());
-                        NavigationSensor.getInstance().addCellToPath(cell.getX(), cell.getY(), cell.getSurface() < 4 ? 0 : 1);
+        Cell chargeStation = null;
+        // Get the charge station
+        for (Floor floor : layouts.getHomeLayout().getFloors()) {
+            for (Room room : floor.getRooms()) {
+                for (Cell cell : room.getCells()) {
+                    if (cell.CheckisaChargingStation()) {
+                        chargeStation = cell;
+                        LogFile.getInstance().writeLogFile(Level.INFO, "Charge station was found!");
                     }
+
+                    // add the cells to the GUI
+                    gridPane.add(new MyNode(cell), cell.getX(), cell.getY());
+                    NavigationSensor.getInstance().addCellToPath(cell.getX(), cell.getY(), cell.getSurface() < 4 ? 0 : 1);
                 }
             }
-
-            cleanSweep = new CleanSweep(chargeStation, layouts.getHomeLayout());
-            cleanSweep.addObserver(this);
-
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
         }
+
+        cleanSweep = new CleanSweep(chargeStation, layouts.getHomeLayout());
+        cleanSweep.addObserver(this);
     }
 
     @Override

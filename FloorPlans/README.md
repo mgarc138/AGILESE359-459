@@ -1,5 +1,7 @@
 ## Layout Documentation
 
+Layouts are now stored in the src/resources folder so they can be included in the distributed jar file.
+
 ### left , right , down and up codes are
 
 0. unknown
