@@ -10,9 +10,9 @@
             "y": 0
           },
           "surface": 1,
-          "right": 1,
+          "right": 3,
           "left": 2,
-          "up": 1,
+          "up": 3,
           "down": 2,
           "charge": true,
           "dirt": 1
@@ -23,9 +23,9 @@
             "y": 0
           },
           "surface": 1,
-          "right": 1,
-          "left": 1,
-          "up": 1,
+          "right": 3,
+          "left": 3,
+          "up": 3,
           "down": 2,
           "charge": false,
           "dirt": 1
@@ -36,9 +36,9 @@
             "y": 0
           },
           "surface": 1,
-          "right": 1,
-          "left": 1,
-          "up": 1,
+          "right": 3,
+          "left": 3,
+          "up": 3,
           "down": 2,
           "charge": false,
           "dirt": 1
@@ -50,8 +50,8 @@
           },
           "surface": 1,
           "right": 2,
-          "left": 1,
-          "up": 1,
+          "left": 3,
+          "up": 3,
           "down": 2,
           "charge": false,
           "dirt": 1
@@ -62,10 +62,10 @@
             "y": 1
           },
           "surface": 1,
-          "right": 1,
+          "right": 3,
           "left": 2,
-          "up": 1,
-          "down": 1,
+          "up": 3,
+          "down": 3,
           "charge": false,
           "dirt": 1
         },
@@ -75,10 +75,10 @@
             "y": 1
           },
           "surface": 1,
-          "right": 1,
-          "left": 1,
-          "up": 1,
-          "down": 1,
+          "right": 3,
+          "left": 3,
+          "up": 3,
+          "down": 3,
           "charge": false,
           "dirt": 1
         },
@@ -88,10 +88,10 @@
             "y": 1
           },
           "surface": 1,
-          "right": 1,
-          "left": 1,
-          "up": 1,
-          "down": 1,
+          "right": 3,
+          "left": 3,
+          "up": 3,
+          "down": 3,
           "charge": false,
           "dirt": 1
         },
@@ -102,9 +102,9 @@
           },
           "surface": 1,
           "right": 2,
-          "left": 1,
-          "up": 1,
-          "down": 1,
+          "left": 3,
+          "up": 3,
+          "down": 3,
           "charge": false,
           "dirt": 1
         },
@@ -114,10 +114,10 @@
             "y": 2
           },
           "surface": 1,
-          "right": 1,
+          "right": 3,
           "left": 2,
-          "up": 1,
-          "down": 1,
+          "up": 3,
+          "down": 3,
           "charge": false,
           "dirt": 1
         },
@@ -127,10 +127,10 @@
             "y": 2
           },
           "surface": 1,
-          "right": 1,
-          "left": 1,
-          "up": 1,
-          "down": 1,
+          "right": 3,
+          "left": 3,
+          "up": 3,
+          "down": 3,
           "charge": false,
           "dirt": 1
         },
@@ -140,10 +140,10 @@
             "y": 2
           },
           "surface": 1,
-          "right": 1,
-          "left": 1,
-          "up": 1,
-          "down": 1,
+          "right": 3,
+          "left": 3,
+          "up": 3,
+          "down": 3,
           "charge": false,
           "dirt": 1
         },
@@ -154,9 +154,9 @@
           },
           "surface": 1,
           "right": 2,
-          "left": 1,
-          "up": 1,
-          "down": 1,
+          "left": 3,
+          "up": 3,
+          "down": 3,
           "charge": false,
           "dirt": 1
         },
@@ -166,10 +166,10 @@
             "y": 3
           },
           "surface": 1,
-          "right": 1,
+          "right": 3,
           "left": 2,
-          "up": 1,
-          "down": 1,
+          "up": 3,
+          "down": 3,
           "charge": false,
           "dirt": 1
         },
@@ -179,10 +179,10 @@
             "y": 3
           },
           "surface": 1,
-          "right": 1,
-          "left": 1,
-          "up": 1,
-          "down": 1,
+          "right": 3,
+          "left": 3,
+          "up": 3,
+          "down": 3,
           "charge": false,
           "dirt": 1
         },
@@ -192,10 +192,10 @@
             "y": 3
           },
           "surface": 1,
-          "right": 1,
-          "left": 1,
-          "up": 1,
-          "down": 1,
+          "right": 3,
+          "left": 3,
+          "up": 3,
+          "down": 3,
           "charge": false,
           "dirt": 1
         },
@@ -205,10 +205,10 @@
             "y": 3
           },
           "surface": 1,
-          "right": 1,
-          "left": 1,
-          "up": 1,
-          "down": 1,
+          "right": 3,
+          "left": 3,
+          "up": 3,
+          "down": 3,
           "charge": false,
           "dirt": 1
         },
@@ -218,10 +218,10 @@
             "y": 4
           },
           "surface": 1,
-          "right": 1,
+          "right": 3,
           "left": 2,
           "up": 2,
-          "down": 1,
+          "down": 3,
           "charge": false,
           "dirt": 1
         },
@@ -231,10 +231,10 @@
             "y": 4
           },
           "surface": 1,
-          "right": 1,
-          "left": 1,
+          "right": 3,
+          "left": 3,
           "up": 2,
-          "down": 1,
+          "down": 3,
           "charge": false,
           "dirt": 1
         },
@@ -244,10 +244,10 @@
             "y": 4
           },
           "surface": 1,
-          "right": 1,
-          "left": 1,
+          "right": 3,
+          "left": 3,
           "up": 2,
-          "down": 1,
+          "down": 3,
           "charge": false,
           "dirt": 1
         },
@@ -258,9 +258,9 @@
           },
           "surface": 1,
           "right": 2,
-          "left": 1,
+          "left": 3,
           "up": 2,
-          "down": 1,
+          "down": 3,
           "charge": false,
           "dirt": 1
         }
