@@ -24,6 +24,10 @@ public final class NavigationSensorsPath {
         return ourInstance;
     }
 
+    public void setGridSize(int width, int height) {
+        aiGrid = new AStarNode[width][height];
+    }
+
     private boolean CheckForOpenPath(int path) {
 
         return path == 2;
@@ -224,6 +228,5 @@ public final class NavigationSensorsPath {
     public void addCellToPath(int x, int y, int pathable) {
 
         aiGrid[x][y] = new AStarNode(x, y, 0, pathable);
-        System.out.println(aiGrid[x][y]);
     }
 }

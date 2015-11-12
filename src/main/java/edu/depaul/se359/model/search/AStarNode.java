@@ -66,4 +66,31 @@ public class AStarNode {
         return "(" + x + "," + y + ")" + " G:" + gCost + " H:" + hCost + "\n"
                 + " NodeValue:" + nodeValue + " Parent:" + (parent == null ? "null" : "(" + parent.x + "," + parent.y + ")");
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        AStarNode aStarNode = (AStarNode) o;
+
+        if (x != aStarNode.x) return false;
+        if (y != aStarNode.y) return false;
+        if (gCost != aStarNode.gCost) return false;
+        if (hCost != aStarNode.hCost) return false;
+        if (nodeValue != aStarNode.nodeValue) return false;
+        return !(parent != null ? !parent.equals(aStarNode.parent) : aStarNode.parent != null);
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = parent != null ? parent.hashCode() : 0;
+        result = 31 * result + x;
+        result = 31 * result + y;
+        result = 31 * result + gCost;
+        result = 31 * result + hCost;
+        result = 31 * result + nodeValue;
+        return result;
+    }
 }
