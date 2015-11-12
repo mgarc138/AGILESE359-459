@@ -134,19 +134,6 @@ public class Simulation extends Application implements Observer {
 
             if (DirtDetector.isDirty(cell)) {
                 text.setText(String.valueOf(cell.getDirt()));
-
-                /*switch (cell.getDirt()) {
-                    case 1:
-                        rectangle.setFill(Color.LIGHTGRAY);
-                        break;
-                    case 2:
-                        rectangle.setFill(Color.DARKGRAY);
-                        break;
-                    case 3:
-                        text.setStroke(Color.WHITE);
-                        rectangle.setFill(Color.BLACK);
-                        break;
-                }*/
             }
             setSurfaceColor(cell);
 

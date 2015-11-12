@@ -20,7 +20,7 @@
           "up": 2,
           "down": 3,
           "charge": true,
-          "dirt": 1
+          "dirt": 0
         },
         {
           "point": {
